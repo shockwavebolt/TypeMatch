@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>TypeMatch</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <section class="flex p-8 justify-between">
+      <div class="flex gap-6 items-center">
+        <div class="font-urbanist text-[26px]">TypeMatch</div>
+        <p class="font-inter text-[18px]">
+          Compare and match typefaces for web interfaces
+        </p>
+      </div>
+      <button class="text-blue-400">B</button>
+    </section>
+
+    <!-- Preview Section -->
+    <section class="flex px-16 py-24 gap-12 self-stretch items-start">
+      <!-- Preview Box -->
+      <div class="w-1/2 font-inter flex flex-col gap-14 items-start">
+        <div class="flex flex-col gap-5">
+          <h1 class="text-[36px]">Design is in the details.</h1>
+          <h2 class="text-[20px]">Choosing the right type pairing matters.</h2>
+        </div>
+        <div class="flex flex-col gap-9">
+          <p class="text-[16px] max-w-150px">
+            Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
+            auctor blandit non neque. Feugiat ultrices ut augue egestas a
+            auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
+            sodales vitae id aliquet tincidunt. Volutpat cras mus nulla lacus
+            in. Egestas sit donec malesuada fermentum ac odio. Consequat
+            suspendisse maecenas enim tortor nunc pharetra a. Et gravida
+            convallis viverra sociis eget eu. Nulla non elit interdum interdum
+            ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
+            ipsum viverra ultricies semper.
+          </p>
+          <caption class="text-[14px]">
+            Caption text provides context or supporting information.
+          </caption>
+        </div>
+        <button class="text-blue-400">Add pairing</button>
+      </div>
+
+      <!-- Controls -->
+      <div class="w-1/2 font-inter flex flex-col py-6 gap-10 items-center">
+        <div class="flex flex-col gap-3">
+          <label class="flex gap-2 text-[16px]"
+            >Heading
+            <span><button class="text-blue-400">B</button></span>
+          </label>
+          <label class="flex gap-2 text-[16px]"
+            >Font-family:<span>input</span></label
+          >
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <label class="flex gap-2 text-[16px]"
+            >Sub-Heading
+            <span><button class="text-blue-400">B</button></span>
+          </label>
+          <label class="flex gap-2 text-[16px]"
+            >Font-family:<span>input</span></label
+          >
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <label class="flex gap-2 text-[16px]"
+            >Body-Text
+            <span><button class="text-blue-400">B</button></span>
+          </label>
+          <label class="flex gap-2 text-[16px]"
+            >Font-family:<span>input</span></label
+          >
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <label class="flex gap-2 text-[16px]"
+            >Caption
+            <span><button class="text-blue-400">B</button></span>
+          </label>
+          <label class="flex gap-2 text-[16px]"
+            >Font-family:<span>input</span></label
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="flex px-16 py-24 gap-12 self-stretch items-start">
+      <!-- Pairing A -->
+      <div class="w-1/2 flex flex-col gap-6">
+        <label class="text-[12px]">Pairing A</label>
+        <div
+          class="h-108 flex flex-col items-center justify-center border border-dashed border-gray-500 rounded-sm text-[16px]"
+        >
+          Add a Pairing to Compare
+        </div>
+      </div>
+      <!-- Pairing B -->
+      <div class="w-1/2 flex flex-col gap-6">
+        <label class="text-[12px]">Pairing B</label>
+        <div
+          class="h-108 flex flex-col items-center justify-center border border-dashed border-gray-500 rounded-sm text-[16px]"
+        >
+          Add a Pairing to Compare
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="w-full py-16 text-center text-[14px] ">
+      © 2026 <span class="font-urbanist">TypeMatch.</span> Fonts provided by
+      Google Fonts.
+    </footer>
+  </body>
+</html>
