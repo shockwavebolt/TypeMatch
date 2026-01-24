@@ -15,19 +15,18 @@
   <body>
     <!-- Header Section -->
     <section
-      class="flex px-16 py-8 justify-between border-b-2 border-[#E9EEF6]"
+      class="flex px-4 py-6 justify-between border-b-2 border-[#E9EEF6] xl:px-16 xl:py-8"
     >
-      <div class="flex gap-10 items-baseline">
-        <div class="font-urbanist text-[26px]">TypeMatch</div>
-        <p class="font-urbanist text-[18px]">
+      <div class="flex flex-col gap-3 items-baseline xl:flex-row xl:gap-10">
+        <div class="font-urbanist text-[20px] xl:text-[26px]">TypeMatch</div>
+        <p class="font-urbanist text-[12px] xl:text-[18px]">
           Compare and match typefaces for web interfaces.
         </p>
       </div>
       <button class="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
+          class="w-6 h-5 xl:h-6 xl:w-8"
           viewBox="0 0 32 32"
           fill="none"
         >
@@ -40,15 +39,19 @@
     </section>
 
     <!-- Preview Section -->
-    <section class="flex px-16 py-24 gap-12 self-stretch items-start">
+    <section
+      class="flex px-4 py-12 gap-12 self-stretch items-start xl:px-16 xl:py-24"
+    >
       <!-- Preview Box -->
-      <div class="w-1/2 font-inter flex flex-col gap-9 items-start">
-        <div class="flex flex-col gap-5">
-          <h1 class="text-[36px]">Design is in the details.</h1>
-          <h2 class="text-[20px]">Choosing the right type pairing matters.</h2>
+      <div class="font-inter flex flex-col gap-5 items-start xl:w-1/2 xl:gap-9">
+        <div class="flex flex-col gap-4 xl:gap-5">
+          <h1 class="text-[20px] xl:text-[36px]">Design is in the details.</h1>
+          <h2 class="text-[14px] xl:text-[20px]">
+            Choosing the right type pairing matters.
+          </h2>
         </div>
         <div class="flex flex-col gap-9">
-          <p class="text-[16px] max-w-150px">
+          <p class="text-[12px] max-w-150px xl:text-[16px]">
             Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
             auctor blandit non neque. Feugiat ultrices ut augue egestas a
             auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
@@ -59,19 +62,21 @@
             ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
             ipsum viverra ultricies semper.
           </p>
-          <p class="text-[16px] text-[#6F6D6D]">
+          <p class="text-[12px] text-[#6F6D6D] xl:text-[16px]">
             Caption text provides context or supporting information.
           </p>
         </div>
         <button
-          class="flex px-3 py-2 border rounded-lg bg-[#00639B] text-white cursor-pointer"
+          class="flex px-3 py-2 border rounded-lg bg-[#00639B] text-white text-[14px] cursor-pointer xl:text-[16px]"
         >
           Add pairing
         </button>
       </div>
 
       <!-- Controls -->
-      <div class="w-1/2 font-inter flex flex-col py-6 gap-10 items-center">
+      <div
+        class="hidden w-1/2 font-inter flex-col py-6 gap-10 items-center xl:flex"
+      >
         <div class="flex flex-col gap-3">
           <label class="flex gap-2 text-[18px] items-center"
             >Heading
@@ -183,29 +188,49 @@
     </section>
 
     <!-- Comparison Section -->
-    <section class="flex px-16 py-24 gap-12 self-stretch items-start">
+    <section
+      class="flex flex-col px-4 py-12 gap-12 self-stretch items-start xl:px-16 xl:py-24 xl:flex-row"
+    >
       <!-- Pairing A [EMPTY] -->
-      <div class="w-1/2 flex flex-col gap-6">
-        <label class="text-[16px] text-[#6F6D6D]">Pairing A</label>
+      <div class="flex flex-col gap-6 xl:w-1/2">
+        <label class="text-[12px] text-[#6F6D6D] xl:text-[16px]"
+          >Pairing A</label
+        >
         <div
-          class="hidden h-108 flex-col items-center justify-center border border-dashed border-gray-500 rounded-sm text-[16px]"
+          class="hidden h-155 flex-col items-center justify-center border border-dashed border-gray-500 rounded-sm text-[16px]"
         >
           Add a Pairing to Compare
         </div>
 
         <!-- Pairing A [FILLED] -->
         <div
-          class="flex flex-col p-8 border-2 border-[#E9EEF6] rounded-sm text-[16px]"
+          class="flex flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
         >
-          <div class="flex flex-col gap-5">
-            <h1 class="text-[36px]">Design is in the details.</h1>
-            <h2 class="text-[20px]">
+          <button class="cursor-pointer self-end">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M9.997 0C15.515 0 19.995 4.48 19.995 9.997C19.995 15.515 15.515 19.995 9.997 19.995C4.48 19.995 0 15.515 0 9.997C0 4.48 4.48 0 9.997 0ZM14.25 9.25H5.75C5.336 9.25 5 9.586 5 10C5 10.414 5.336 10.75 5.75 10.75H14.25C14.664 10.75 15 10.414 15 10C15 9.586 14.664 9.25 14.25 9.25Z"
+                fill="#00639B"
+              />
+            </svg>
+          </button>
+          <div class="flex flex-col gap-4 xl:gap-5">
+            <h1 class="text-[20px] xl:text-[36px]">
+              Design is in the details.
+            </h1>
+            <h2 class="text-[14px] xl:text-[20px]">
               Choosing the right type pairing matters.
             </h2>
           </div>
 
           <div class="flex flex-col gap-9">
-            <p class="text-[16px] max-w-150px">
+            <p class="text-[12px] max-w-150px xl:text-[16px]">
               Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
               auctor blandit non neque. Feugiat ultrices ut augue egestas a
               auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
@@ -216,21 +241,31 @@
               ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
               ipsum viverra ultricies semper.
             </p>
-            <p class="text-[16px] text-[#6F6D6D]">
+            <p class="text-[12px] text-[#6F6D6D] xl:text-[16px]">
               Caption text provides context or supporting information.
             </p>
 
-            <div class="flex flex-col p-6 items-start gap-2 bg-[#F3F6FC]">
-              <div class="w-45 flex justify-between text-[#6F6D6D]">
+            <div
+              class="flex flex-col p-6 items-start gap-2 rounded-sm bg-[#F3F6FC]"
+            >
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
                 Heading:<span class="text-black">Inter</span>
               </div>
-              <div class="w-45 flex justify-between text-[#6F6D6D]">
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
                 Sub-Heading:<span class="text-black">Inter</span>
               </div>
-              <div class="w-45 flex justify-between text-[#6F6D6D]">
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
                 Body-Text:<span class="text-black">Inter</span>
               </div>
-              <div class="w-45 flex justify-between text-[#6F6D6D]">
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
                 Caption:<span class="text-black">Inter</span>
               </div>
             </div>
@@ -238,26 +273,44 @@
         </div>
       </div>
       <!-- Pairing B -->
-      <div class="flex flex-col w-1/2 gap-6">
-        <label class="text-[16px] text-[#6F6D6D]">Pairing B</label>
+      <div class="flex flex-col gap-6 xl:w-1/2">
+        <label class="text-[12px] text-[#6F6D6D] xl:text-[16px]"
+          >Pairing B</label
+        >
         <div
-          class="hidden flex-col h-108 items-center justify-center border border-dashed border-gray-500 rounded-sm text-[16px]"
+          class="hidden flex-col h-155 items-center justify-center border border-dashed border-gray-500 rounded-sm text-[16px]"
         >
           Add a Pairing to Compare
         </div>
         <!-- Pairing B [FILLED] -->
         <div
-          class="flex flex-col p-8 border-2 border-[#E9EEF6] rounded-sm text-[16px]"
+          class="flex flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
         >
-          <div class="flex flex-col gap-5">
-            <h1 class="text-[36px]">Design is in the details.</h1>
-            <h2 class="text-[20px]">
+          <button class="cursor-pointer self-end">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M9.997 0C15.515 0 19.995 4.48 19.995 9.997C19.995 15.515 15.515 19.995 9.997 19.995C4.48 19.995 0 15.515 0 9.997C0 4.48 4.48 0 9.997 0ZM14.25 9.25H5.75C5.336 9.25 5 9.586 5 10C5 10.414 5.336 10.75 5.75 10.75H14.25C14.664 10.75 15 10.414 15 10C15 9.586 14.664 9.25 14.25 9.25Z"
+                fill="#00639B"
+              />
+            </svg>
+          </button>
+          <div class="flex flex-col gap-4 xl:gap-5">
+            <h1 class="text-[20px] xl:text-[36px]">
+              Design is in the details.
+            </h1>
+            <h2 class="text-[14px] xl:text-[20px]">
               Choosing the right type pairing matters.
             </h2>
           </div>
 
           <div class="flex flex-col gap-9">
-            <p class="text-[16px] max-w-150px">
+            <p class="text-[12px] max-w-150px xl:text-[16px]">
               Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
               auctor blandit non neque. Feugiat ultrices ut augue egestas a
               auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
@@ -268,21 +321,31 @@
               ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
               ipsum viverra ultricies semper.
             </p>
-            <p class="text-[16px] text-[#6F6D6D]">
+            <p class="text-[12px] text-[#6F6D6D] xl:text-[16px]">
               Caption text provides context or supporting information.
             </p>
 
-            <div class="flex flex-col p-6 items-start gap-2 bg-[#F3F6FC]">
-              <div class="w-45 flex justify-between text-[#6F6D6D]">
+            <div
+              class="flex flex-col p-6 items-start gap-2 rounded-sm bg-[#F3F6FC]"
+            >
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
                 Heading:<span class="text-black">Inter</span>
               </div>
-              <div class="w-45 flex justify-between text-[#6F6D6D]">
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
                 Sub-Heading:<span class="text-black">Inter</span>
               </div>
-              <div class="w-45 flex justify-between text-[#6F6D6D]">
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
                 Body-Text:<span class="text-black">Inter</span>
               </div>
-              <div class="w-45 flex justify-between text-[#6F6D6D]">
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
                 Caption:<span class="text-black">Inter</span>
               </div>
             </div>
@@ -292,7 +355,7 @@
     </section>
     <!-- Footer -->
     <footer
-      class="w-full py-16 text-center text-[14px] border border-t-2 border-[#E9EEF6]"
+      class="w-full py-4 text-center text-[8px] border border-t-2 border-[#E9EEF6] xl:py-16 xl:text-[14px]"
     >
       © 2026 <span class="font-urbanist">TypeMatch.</span> Fonts provided by
       Google Fonts.
