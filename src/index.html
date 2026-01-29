@@ -45,13 +45,24 @@
       <!-- Preview Box -->
       <div class="font-inter flex flex-col gap-5 items-start xl:w-1/2 xl:gap-9">
         <div class="flex flex-col gap-4 xl:gap-5">
-          <h1 class="text-[20px] xl:text-[36px]">Design is in the details.</h1>
-          <h2 class="text-[14px] xl:text-[20px]">
+          <h1
+            id="headingPreview"
+            class="previewItem text-[20px] xl:text-[36px]"
+          >
+            Design is in the details.
+          </h1>
+          <h2
+            id="subHeadingPreview"
+            class="previewItem text-[14px] xl:text-[20px]"
+          >
             Choosing the right type pairing matters.
           </h2>
         </div>
         <div class="flex flex-col gap-9">
-          <p class="text-[12px] max-w-150px xl:text-[16px]">
+          <p
+            id="bodyPreview"
+            class="previewItem text-[12px] max-w-150px xl:text-[16px]"
+          >
             Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
             auctor blandit non neque. Feugiat ultrices ut augue egestas a
             auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
@@ -62,11 +73,23 @@
             ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
             ipsum viverra ultricies semper.
           </p>
-          <p class="text-[12px] text-[#6F6D6D] xl:text-[16px]">
+          <p
+            id="captionPreview"
+            class="previewItem text-[12px] text-[#6F6D6D] xl:text-[16px]"
+          >
             Caption text provides context or supporting information.
           </p>
         </div>
+
+        <p
+          id="statusMessage"
+          class="hidden text-[18px] items-center text-[#6F6D6D]"
+        >
+          Add a preview item.
+        </p>
+
         <button
+          id="AddPairingBtn"
           class="flex px-3 py-2 border rounded-lg bg-[#00639B] text-white text-[14px] cursor-pointer xl:text-[16px]"
         >
           Add pairing
@@ -75,29 +98,53 @@
 
       <!-- Controls -->
       <div
-        class="hidden w-1/2 font-inter flex-col py-6 gap-10 items-center xl:flex"
+        class="hidden w-1/2 font-inter flex-col py-6 gap-10 items-center sm:flex"
       >
-        <div class="flex flex-col gap-3">
-          <label class="flex gap-2 text-[18px] items-center"
-            >Heading
-            <button class="cursor-pointer">
+        <div class="field flex flex-col gap-3">
+          <div class="flex gap-2">
+            <label class="items-center text-[16px] md:text-[18px]"
+              >Heading
+            </label>
+            <button
+              type="button"
+              class="toggleButton cursor-pointer"
+              data-target="headingPreview"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
                 height="18"
-                viewBox="0 0 20 20"
+                viewBox="0 0 24 24"
                 fill="none"
+                class="svgMinus"
               >
                 <path
-                  d="M9.997 0C15.515 0 19.995 4.48 19.995 9.997C19.995 15.515 15.515 19.995 9.997 19.995C4.48 19.995 0 15.515 0 9.997C0 4.48 4.48 0 9.997 0ZM14.25 9.25H5.75C5.336 9.25 5 9.586 5 10C5 10.414 5.336 10.75 5.75 10.75H14.25C14.664 10.75 15 10.414 15 10C15 9.586 14.664 9.25 14.25 9.25Z"
+                  d="M12.002 2.00488C17.52 2.00488 22 6.48488 22 12.0019C22 17.5199 17.52 21.9999 12.002 21.9999C6.485 21.9999 2.005 17.5199 2.005 12.0019C2.005 6.48488 6.485 2.00488 12.002 2.00488ZM16.255 11.2549H7.755C7.341 11.2549 7.005 11.5909 7.005 12.0049C7.005 12.4189 7.341 12.7549 7.755 12.7549H16.255C16.669 12.7549 17.005 12.4189 17.005 12.0049C17.005 11.5909 16.669 11.2549 16.255 11.2549Z"
+                  fill="#00639B"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgPlus hidden"
+              >
+                <path
+                  d="M12.002 2C17.52 2 22 6.48 22 11.998C22 17.515 17.52 21.995 12.002 21.995C6.485 21.995 2.005 17.515 2.005 11.998C2.005 6.48 6.485 2 12.002 2ZM11.255 11.25H7.755C7.341 11.25 7.005 11.586 7.005 12C7.005 12.414 7.341 12.75 7.755 12.75H11.255V16.25C11.255 16.664 11.591 17 12.005 17C12.419 17 12.755 16.664 12.755 16.25V12.75H16.255C16.669 12.75 17.005 12.414 17.005 12C17.005 11.586 16.669 11.25 16.255 11.25H12.755V7.75C12.755 7.336 12.419 7 12.005 7C11.591 7 11.255 7.336 11.255 7.75V11.25Z"
                   fill="#00639B"
                 />
               </svg>
             </button>
-          </label>
-          <label class="flex gap-2 text-[16px] items-center"
+          </div>
+
+          <label
+            class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
             >Font-family:
             <input
+              id="input"
               type="text"
               placeholder="Choose a font..."
               class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none"
@@ -105,80 +152,151 @@
           </label>
         </div>
 
-        <div class="flex flex-col gap-3">
-          <label class="flex gap-2 text-[18px] items-center"
-            >Sub-Heading
-            <button class="cursor-pointer">
+        <div class="field flex flex-col gap-3">
+          <div class="flex gap-2">
+            <label class="text-[16px] md:text-[18px]">Sub-Heading </label>
+            <button
+              type="button"
+              class="toggleButton cursor-pointer"
+              data-target="subHeadingPreview"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
                 height="18"
-                viewBox="0 0 20 20"
+                viewBox="0 0 24 24"
                 fill="none"
+                class="svgMinus"
               >
                 <path
-                  d="M9.997 0C15.515 0 19.995 4.48 19.995 9.997C19.995 15.515 15.515 19.995 9.997 19.995C4.48 19.995 0 15.515 0 9.997C0 4.48 4.48 0 9.997 0ZM14.25 9.25H5.75C5.336 9.25 5 9.586 5 10C5 10.414 5.336 10.75 5.75 10.75H14.25C14.664 10.75 15 10.414 15 10C15 9.586 14.664 9.25 14.25 9.25Z"
+                  d="M12.002 2.00488C17.52 2.00488 22 6.48488 22 12.0019C22 17.5199 17.52 21.9999 12.002 21.9999C6.485 21.9999 2.005 17.5199 2.005 12.0019C2.005 6.48488 6.485 2.00488 12.002 2.00488ZM16.255 11.2549H7.755C7.341 11.2549 7.005 11.5909 7.005 12.0049C7.005 12.4189 7.341 12.7549 7.755 12.7549H16.255C16.669 12.7549 17.005 12.4189 17.005 12.0049C17.005 11.5909 16.669 11.2549 16.255 11.2549Z"
+                  fill="#00639B"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgPlus hidden"
+              >
+                <path
+                  d="M12.002 2C17.52 2 22 6.48 22 11.998C22 17.515 17.52 21.995 12.002 21.995C6.485 21.995 2.005 17.515 2.005 11.998C2.005 6.48 6.485 2 12.002 2ZM11.255 11.25H7.755C7.341 11.25 7.005 11.586 7.005 12C7.005 12.414 7.341 12.75 7.755 12.75H11.255V16.25C11.255 16.664 11.591 17 12.005 17C12.419 17 12.755 16.664 12.755 16.25V12.75H16.255C16.669 12.75 17.005 12.414 17.005 12C17.005 11.586 16.669 11.25 16.255 11.25H12.755V7.75C12.755 7.336 12.419 7 12.005 7C11.591 7 11.255 7.336 11.255 7.75V11.25Z"
                   fill="#00639B"
                 />
               </svg>
             </button>
-          </label>
-          <label class="flex gap-2 text-[16px] items-center"
+          </div>
+
+          <label
+            class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
             >Font-family:
             <input
+              id="input"
               type="text"
               placeholder="Choose a font..."
               class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none"
           /></label>
         </div>
 
-        <div class="flex flex-col gap-3">
-          <label class="flex gap-2 text-[18px] items-center"
-            >Body-Text
-            <button class="cursor-pointer">
+        <div class="field flex flex-col gap-3">
+          <div class="flex gap-2">
+            <label class="flex gap-2 items-center text-[16px] md:text-[18px]"
+              >Body-Text
+            </label>
+            <button
+              type="button"
+              class="toggleButton cursor-pointer"
+              data-target="bodyPreview"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
                 height="18"
-                viewBox="0 0 20 20"
+                viewBox="0 0 24 24"
                 fill="none"
+                class="svgMinus"
               >
                 <path
-                  d="M9.997 0C15.515 0 19.995 4.48 19.995 9.997C19.995 15.515 15.515 19.995 9.997 19.995C4.48 19.995 0 15.515 0 9.997C0 4.48 4.48 0 9.997 0ZM14.25 9.25H5.75C5.336 9.25 5 9.586 5 10C5 10.414 5.336 10.75 5.75 10.75H14.25C14.664 10.75 15 10.414 15 10C15 9.586 14.664 9.25 14.25 9.25Z"
+                  d="M12.002 2.00488C17.52 2.00488 22 6.48488 22 12.0019C22 17.5199 17.52 21.9999 12.002 21.9999C6.485 21.9999 2.005 17.5199 2.005 12.0019C2.005 6.48488 6.485 2.00488 12.002 2.00488ZM16.255 11.2549H7.755C7.341 11.2549 7.005 11.5909 7.005 12.0049C7.005 12.4189 7.341 12.7549 7.755 12.7549H16.255C16.669 12.7549 17.005 12.4189 17.005 12.0049C17.005 11.5909 16.669 11.2549 16.255 11.2549Z"
+                  fill="#00639B"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgPlus hidden"
+              >
+                <path
+                  d="M12.002 2C17.52 2 22 6.48 22 11.998C22 17.515 17.52 21.995 12.002 21.995C6.485 21.995 2.005 17.515 2.005 11.998C2.005 6.48 6.485 2 12.002 2ZM11.255 11.25H7.755C7.341 11.25 7.005 11.586 7.005 12C7.005 12.414 7.341 12.75 7.755 12.75H11.255V16.25C11.255 16.664 11.591 17 12.005 17C12.419 17 12.755 16.664 12.755 16.25V12.75H16.255C16.669 12.75 17.005 12.414 17.005 12C17.005 11.586 16.669 11.25 16.255 11.25H12.755V7.75C12.755 7.336 12.419 7 12.005 7C11.591 7 11.255 7.336 11.255 7.75V11.25Z"
                   fill="#00639B"
                 />
               </svg>
             </button>
-          </label>
-          <label class="flex gap-2 text-[16px] items-center"
-            >Font-family:<input
+          </div>
+
+          <label
+            class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
+            >Font-family:
+            <input
+              id="input"
               type="text"
               placeholder="Choose a font..."
               class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none"
           /></label>
         </div>
 
-        <div class="flex flex-col gap-3">
-          <label class="flex gap-2 text-[18px] items-center"
-            >Caption
-            <button class="cursor-pointer">
+        <div class="field flex flex-col gap-3">
+          <div class="flex gap-2">
+            <label class="flex gap-2 items-center text-[16px] md:text-[18px]"
+              >Caption
+            </label>
+            <button
+              type="button"
+              class="toggleButton cursor-pointer"
+              data-target="captionPreview"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
                 height="18"
-                viewBox="0 0 20 20"
+                viewBox="0 0 24 24"
                 fill="none"
+                class="svgMinus"
               >
                 <path
-                  d="M9.997 0C15.515 0 19.995 4.48 19.995 9.997C19.995 15.515 15.515 19.995 9.997 19.995C4.48 19.995 0 15.515 0 9.997C0 4.48 4.48 0 9.997 0ZM14.25 9.25H5.75C5.336 9.25 5 9.586 5 10C5 10.414 5.336 10.75 5.75 10.75H14.25C14.664 10.75 15 10.414 15 10C15 9.586 14.664 9.25 14.25 9.25Z"
+                  d="M12.002 2.00488C17.52 2.00488 22 6.48488 22 12.0019C22 17.5199 17.52 21.9999 12.002 21.9999C6.485 21.9999 2.005 17.5199 2.005 12.0019C2.005 6.48488 6.485 2.00488 12.002 2.00488ZM16.255 11.2549H7.755C7.341 11.2549 7.005 11.5909 7.005 12.0049C7.005 12.4189 7.341 12.7549 7.755 12.7549H16.255C16.669 12.7549 17.005 12.4189 17.005 12.0049C17.005 11.5909 16.669 11.2549 16.255 11.2549Z"
+                  fill="#00639B"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgPlus hidden"
+              >
+                <path
+                  d="M12.002 2C17.52 2 22 6.48 22 11.998C22 17.515 17.52 21.995 12.002 21.995C6.485 21.995 2.005 17.515 2.005 11.998C2.005 6.48 6.485 2 12.002 2ZM11.255 11.25H7.755C7.341 11.25 7.005 11.586 7.005 12C7.005 12.414 7.341 12.75 7.755 12.75H11.255V16.25C11.255 16.664 11.591 17 12.005 17C12.419 17 12.755 16.664 12.755 16.25V12.75H16.255C16.669 12.75 17.005 12.414 17.005 12C17.005 11.586 16.669 11.25 16.255 11.25H12.755V7.75C12.755 7.336 12.419 7 12.005 7C11.591 7 11.255 7.336 11.255 7.75V11.25Z"
                   fill="#00639B"
                 />
               </svg>
             </button>
-          </label>
-          <label class="flex gap-2 text-[16px] items-center"
+          </div>
+
+          <label
+            class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
             >Font-family:
             <input
+              id="input"
               type="text"
               placeholder="Choose a font..."
               class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none"
@@ -360,5 +478,6 @@
       © 2026 <span class="font-urbanist">TypeMatch.</span> Fonts provided by
       Google Fonts.
     </footer>
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-blue-400: oklch(70.7% 0.165 254.624);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-black: #000;
     --color-white: #fff;
@@ -284,6 +285,9 @@
   .gap-16 {
     gap: calc(var(--spacing) * 16);
   }
+  .self-center {
+    align-self: center;
+  }
   .self-end {
     align-self: flex-end;
   }
@@ -412,8 +416,20 @@
   .text-\[36px\] {
     font-size: 36px;
   }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
   .text-\[\#6F6D6D\] {
     color: #6F6D6D;
+  }
+  .text-\[\#858585\] {
+    color: #858585;
+  }
+  .text-\[\#ADADAD\] {
+    color: #ADADAD;
+  }
+  .text-\[\#C2C2C2\] {
+    color: #C2C2C2;
   }
   .text-\[blue\] {
     color: blue;
@@ -423,6 +439,9 @@
   }
   .text-blue-400 {
     color: var(--color-blue-400);
+  }
+  .text-gray-400 {
+    color: var(--color-gray-400);
   }
   .text-white {
     color: var(--color-white);
@@ -444,6 +463,36 @@
     &:focus {
       --tw-outline-style: none;
       outline-style: none;
+    }
+  }
+  .sm\:flex {
+    @media (width >= 40rem) {
+      display: flex;
+    }
+  }
+  .sm\:text-\[18px\] {
+    @media (width >= 40rem) {
+      font-size: 18px;
+    }
+  }
+  .md\:flex {
+    @media (width >= 48rem) {
+      display: flex;
+    }
+  }
+  .md\:text-\[16px\] {
+    @media (width >= 48rem) {
+      font-size: 16px;
+    }
+  }
+  .md\:text-\[18px\] {
+    @media (width >= 48rem) {
+      font-size: 18px;
+    }
+  }
+  .lg\:flex {
+    @media (width >= 64rem) {
+      display: flex;
     }
   }
   .xl\:flex {
