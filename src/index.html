@@ -102,7 +102,7 @@
       >
         <div class="field flex flex-col gap-3">
           <div class="flex gap-2">
-            <label class="items-center text-[16px] md:text-[18px]"
+            <label class="items-center text-[14px] md:text-[16px]"
               >Heading
             </label>
             <button
@@ -147,14 +147,14 @@
               id="input"
               type="text"
               placeholder="Choose a font..."
-              class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none"
+              class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none placeholder:text-sm md:placeholder:text-[16px]"
             />
           </label>
         </div>
 
         <div class="field flex flex-col gap-3">
           <div class="flex gap-2">
-            <label class="text-[16px] md:text-[18px]">Sub-Heading </label>
+            <label class="text-[14px] md:text-[16px]">Sub-Heading </label>
             <button
               type="button"
               class="toggleButton cursor-pointer"
@@ -197,13 +197,13 @@
               id="input"
               type="text"
               placeholder="Choose a font..."
-              class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none"
+              class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none placeholder:text-sm md:placeholder:text-[16px]"
           /></label>
         </div>
 
         <div class="field flex flex-col gap-3">
           <div class="flex gap-2">
-            <label class="flex gap-2 items-center text-[16px] md:text-[18px]"
+            <label class="flex gap-2 items-center text-[14px] md:text-[16px]"
               >Body-Text
             </label>
             <button
@@ -248,13 +248,13 @@
               id="input"
               type="text"
               placeholder="Choose a font..."
-              class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none"
+              class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none placeholder:text-sm md:placeholder:text-[16px]"
           /></label>
         </div>
 
         <div class="field flex flex-col gap-3">
           <div class="flex gap-2">
-            <label class="flex gap-2 items-center text-[16px] md:text-[18px]"
+            <label class="flex gap-2 items-center text-[14px] md:text-[16px]"
               >Caption
             </label>
             <button
@@ -299,7 +299,7 @@
               id="input"
               type="text"
               placeholder="Choose a font..."
-              class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none"
+              class="flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none placeholder:text-sm md:placeholder:text-[16px]"
           /></label>
         </div>
       </div>
@@ -310,21 +310,27 @@
       class="flex flex-col px-4 py-12 gap-12 self-stretch items-start xl:px-16 xl:py-24 xl:flex-row"
     >
       <!-- Pairing A [EMPTY] -->
-      <div class="flex flex-col gap-6 xl:w-1/2">
+      <div class="flex flex-col gap-6 w-full xl:w-1/2">
         <label class="text-[12px] text-[#6F6D6D] xl:text-[16px]"
           >Pairing A</label
         >
         <div
-          class="hidden h-155 flex-col items-center justify-center border border-dashed border-gray-500 rounded-sm text-[16px]"
+          id="pairingAEmpty"
+          class="h-155 hidden w-full flex-col items-center justify-center border border-dashed border-gray-500 rounded-sm text-[14px]"
         >
           Add a Pairing to Compare
         </div>
 
         <!-- Pairing A [FILLED] -->
         <div
+          id="pairingA"
           class="flex flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
         >
-          <button class="cursor-pointer self-end">
+          <button
+            id="pairingAbtn"
+            class="cursor-pointer self-end"
+            type="button"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -391,20 +397,26 @@
         </div>
       </div>
       <!-- Pairing B -->
-      <div class="flex flex-col gap-6 xl:w-1/2">
+      <div class="flex flex-col gap-6 w-full xl:w-1/2">
         <label class="text-[12px] text-[#6F6D6D] xl:text-[16px]"
           >Pairing B</label
         >
         <div
-          class="hidden flex-col h-155 items-center justify-center border border-dashed border-gray-500 rounded-sm text-[16px]"
+          id="pairingBEmpty"
+          class="hidden flex-col h-155 items-center justify-center border border-dashed border-gray-500 rounded-sm text-[14px]"
         >
           Add a Pairing to Compare
         </div>
         <!-- Pairing B [FILLED] -->
         <div
+          id="pairingB"
           class="flex flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
         >
-          <button class="cursor-pointer self-end">
+          <button
+            id="pairingBbtn"
+            class="cursor-pointer self-end"
+            type="button"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
