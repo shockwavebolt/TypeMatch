@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>typematch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section
+      class="flex px-4 py-6 justify-between border-b-2 border-[#E9EEF6] xl:px-16 xl:py-8"
+    >
+      <div class="flex flex-col gap-3 items-baseline xl:flex-row xl:gap-10">
+        <div class="font-urbanist text-[20px] xl:text-[26px]">TypeMatch</div>
+        <p class="font-urbanist text-[12px] xl:text-[18px]">
+          Compare and match typefaces for web interfaces.
+        </p>
+      </div>
+      <button class="cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-5 xl:h-6 xl:w-8"
+          viewBox="0 0 32 32"
+          fill="none"
+        >
+          <path
+            d="M16 12C18.2053 12 20 13.7947 20 16C20 18.2053 18.2053 20 16 20V12ZM16 9.33333C12.3173 9.33333 9.33333 12.3173 9.33333 16C9.33333 19.6827 12.3173 22.6667 16 22.6667C19.6827 22.6667 22.6667 19.6827 22.6667 16C22.6667 12.3173 19.6827 9.33333 16 9.33333ZM10.4213 8.53467L5.63067 3.74267L3.744 5.628L8.53733 10.4213C9.072 9.70533 9.70533 9.07067 10.4213 8.53467ZM16 6.66667C16.4533 6.66667 16.896 6.71067 17.3333 6.77333V0H14.6667V6.77333C15.104 6.71067 15.5467 6.66667 16 6.66667ZM23.464 10.42L28.2573 5.62667L26.372 3.74133L21.5787 8.53467C22.2947 9.07067 22.928 9.70533 23.464 10.42ZM6.66667 16C6.66667 15.5467 6.71067 15.104 6.77333 14.6667H0V17.3333H6.77333C6.71067 16.896 6.66667 16.4533 6.66667 16ZM21.58 23.464L26.372 28.2547L28.2587 26.3693L23.4667 21.5787C22.9293 22.2933 22.2947 22.928 21.58 23.464ZM8.53467 21.5787L3.744 26.3693L5.62933 28.2547L10.42 23.464C9.70533 22.928 9.072 22.2947 8.53467 21.5787ZM25.2267 14.6667C25.2893 15.104 25.3333 15.5467 25.3333 16C25.3333 16.4533 25.2893 16.896 25.2267 17.3333H32V14.6667H25.2267ZM16 25.3333C15.5467 25.3333 15.104 25.2893 14.6667 25.2267V32H17.3333V25.2267C16.896 25.2893 16.4533 25.3333 16 25.3333Z"
+            fill="#00639B"
+          />
+        </svg>
+      </button>
+    </section>
+
+    <!-- Preview Section -->
+    <section
+      class="flex px-4 py-12 gap-12 self-stretch items-start xl:px-16 xl:py-24"
+    >
+      <!-- Preview Box -->
+      <div class="font-inter flex flex-col gap-5 items-start xl:w-1/2 xl:gap-9">
+        <div class="flex flex-col gap-4 xl:gap-5">
+          <h1
+            id="headingPreview"
+            class="previewItem text-[20px] xl:text-[36px]"
+          >
+            Design is in the details.
+          </h1>
+          <h2
+            id="subHeadingPreview"
+            class="previewItem text-[14px] xl:text-[20px]"
+          >
+            Choosing the right type pairing matters.
+          </h2>
+        </div>
+        <div class="flex flex-col gap-9">
+          <p
+            id="bodyPreview"
+            class="previewItem text-[12px] max-w-150px xl:text-[16px]"
+          >
+            Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
+            auctor blandit non neque. Feugiat ultrices ut augue egestas a
+            auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
+            sodales vitae id aliquet tincidunt. Volutpat cras mus nulla lacus
+            in. Egestas sit donec malesuada fermentum ac odio. Consequat
+            suspendisse maecenas enim tortor nunc pharetra a. Et gravida
+            convallis viverra sociis eget eu. Nulla non elit interdum interdum
+            ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
+            ipsum viverra ultricies semper.
+          </p>
+          <p
+            id="captionPreview"
+            class="previewItem text-[12px] text-[#6F6D6D] xl:text-[16px]"
+          >
+            Caption text provides context or supporting information.
+          </p>
+        </div>
+
+        <p
+          id="statusMessage"
+          class="hidden text-[18px] items-center text-[#6F6D6D]"
+        >
+          Add a preview item.
+        </p>
+
+        <button
+          id="AddPairingBtn"
+          class="flex px-3 py-2 border rounded-lg bg-[#00639B] text-white text-[14px] cursor-pointer xl:text-[16px]"
+        >
+          Add pairing
+        </button>
+      </div>
+
+      <!-- Controls -->
+      <div
+        class="hidden w-1/2 font-inter flex-col py-6 gap-10 items-center sm:flex"
+      >
+        <div class="field flex flex-col gap-3">
+          <div class="flex gap-2">
+            <label class="items-center text-[14px] md:text-[16px]"
+              >Heading
+            </label>
+            <button
+              type="button"
+              class="toggleButton cursor-pointer"
+              data-target="headingPreview"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgMinus"
+              >
+                <path
+                  d="M12.002 2.00488C17.52 2.00488 22 6.48488 22 12.0019C22 17.5199 17.52 21.9999 12.002 21.9999C6.485 21.9999 2.005 17.5199 2.005 12.0019C2.005 6.48488 6.485 2.00488 12.002 2.00488ZM16.255 11.2549H7.755C7.341 11.2549 7.005 11.5909 7.005 12.0049C7.005 12.4189 7.341 12.7549 7.755 12.7549H16.255C16.669 12.7549 17.005 12.4189 17.005 12.0049C17.005 11.5909 16.669 11.2549 16.255 11.2549Z"
+                  fill="#00639B"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgPlus hidden"
+              >
+                <path
+                  d="M12.002 2C17.52 2 22 6.48 22 11.998C22 17.515 17.52 21.995 12.002 21.995C6.485 21.995 2.005 17.515 2.005 11.998C2.005 6.48 6.485 2 12.002 2ZM11.255 11.25H7.755C7.341 11.25 7.005 11.586 7.005 12C7.005 12.414 7.341 12.75 7.755 12.75H11.255V16.25C11.255 16.664 11.591 17 12.005 17C12.419 17 12.755 16.664 12.755 16.25V12.75H16.255C16.669 12.75 17.005 12.414 17.005 12C17.005 11.586 16.669 11.25 16.255 11.25H12.755V7.75C12.755 7.336 12.419 7 12.005 7C11.591 7 11.255 7.336 11.255 7.75V11.25Z"
+                  fill="#00639B"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <label
+            class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
+            >Font-family:
+            <input
+              list="font-names"
+              data-target="headingPreview"
+              type="text"
+              placeholder="Choose a font..."
+              class="font-input flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none placeholder:text-sm md:placeholder:text-[16px]"
+            />
+            <datalist id="font-names"></datalist>
+          </label>
+        </div>
+
+        <div class="field flex flex-col gap-3">
+          <div class="flex gap-2">
+            <label class="text-[14px] md:text-[16px]">Sub-Heading </label>
+            <button
+              type="button"
+              class="toggleButton cursor-pointer"
+              data-target="subHeadingPreview"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgMinus"
+              >
+                <path
+                  d="M12.002 2.00488C17.52 2.00488 22 6.48488 22 12.0019C22 17.5199 17.52 21.9999 12.002 21.9999C6.485 21.9999 2.005 17.5199 2.005 12.0019C2.005 6.48488 6.485 2.00488 12.002 2.00488ZM16.255 11.2549H7.755C7.341 11.2549 7.005 11.5909 7.005 12.0049C7.005 12.4189 7.341 12.7549 7.755 12.7549H16.255C16.669 12.7549 17.005 12.4189 17.005 12.0049C17.005 11.5909 16.669 11.2549 16.255 11.2549Z"
+                  fill="#00639B"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgPlus hidden"
+              >
+                <path
+                  d="M12.002 2C17.52 2 22 6.48 22 11.998C22 17.515 17.52 21.995 12.002 21.995C6.485 21.995 2.005 17.515 2.005 11.998C2.005 6.48 6.485 2 12.002 2ZM11.255 11.25H7.755C7.341 11.25 7.005 11.586 7.005 12C7.005 12.414 7.341 12.75 7.755 12.75H11.255V16.25C11.255 16.664 11.591 17 12.005 17C12.419 17 12.755 16.664 12.755 16.25V12.75H16.255C16.669 12.75 17.005 12.414 17.005 12C17.005 11.586 16.669 11.25 16.255 11.25H12.755V7.75C12.755 7.336 12.419 7 12.005 7C11.591 7 11.255 7.336 11.255 7.75V11.25Z"
+                  fill="#00639B"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <label
+            class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
+            >Font-family:
+            <input
+              data-target="subHeadingPreview"
+              list="font-names"
+              type="text"
+              placeholder="Choose a font..."
+              class="font-input flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none placeholder:text-sm md:placeholder:text-[16px]"
+          /></label>
+        </div>
+
+        <div class="field flex flex-col gap-3">
+          <div class="flex gap-2">
+            <label class="flex gap-2 items-center text-[14px] md:text-[16px]"
+              >Body-Text
+            </label>
+            <button
+              type="button"
+              class="toggleButton cursor-pointer"
+              data-target="bodyPreview"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgMinus"
+              >
+                <path
+                  d="M12.002 2.00488C17.52 2.00488 22 6.48488 22 12.0019C22 17.5199 17.52 21.9999 12.002 21.9999C6.485 21.9999 2.005 17.5199 2.005 12.0019C2.005 6.48488 6.485 2.00488 12.002 2.00488ZM16.255 11.2549H7.755C7.341 11.2549 7.005 11.5909 7.005 12.0049C7.005 12.4189 7.341 12.7549 7.755 12.7549H16.255C16.669 12.7549 17.005 12.4189 17.005 12.0049C17.005 11.5909 16.669 11.2549 16.255 11.2549Z"
+                  fill="#00639B"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgPlus hidden"
+              >
+                <path
+                  d="M12.002 2C17.52 2 22 6.48 22 11.998C22 17.515 17.52 21.995 12.002 21.995C6.485 21.995 2.005 17.515 2.005 11.998C2.005 6.48 6.485 2 12.002 2ZM11.255 11.25H7.755C7.341 11.25 7.005 11.586 7.005 12C7.005 12.414 7.341 12.75 7.755 12.75H11.255V16.25C11.255 16.664 11.591 17 12.005 17C12.419 17 12.755 16.664 12.755 16.25V12.75H16.255C16.669 12.75 17.005 12.414 17.005 12C17.005 11.586 16.669 11.25 16.255 11.25H12.755V7.75C12.755 7.336 12.419 7 12.005 7C11.591 7 11.255 7.336 11.255 7.75V11.25Z"
+                  fill="#00639B"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <label
+            class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
+            >Font-family:
+            <input
+              data-target="bodyPreview"
+              list="font-names"
+              type="text"
+              placeholder="Choose a font..."
+              class="font-input flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none placeholder:text-sm md:placeholder:text-[16px]"
+          /></label>
+        </div>
+
+        <div class="field flex flex-col gap-3">
+          <div class="flex gap-2">
+            <label class="flex gap-2 items-center text-[14px] md:text-[16px]"
+              >Caption
+            </label>
+            <button
+              type="button"
+              class="toggleButton cursor-pointer"
+              data-target="captionPreview"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgMinus"
+              >
+                <path
+                  d="M12.002 2.00488C17.52 2.00488 22 6.48488 22 12.0019C22 17.5199 17.52 21.9999 12.002 21.9999C6.485 21.9999 2.005 17.5199 2.005 12.0019C2.005 6.48488 6.485 2.00488 12.002 2.00488ZM16.255 11.2549H7.755C7.341 11.2549 7.005 11.5909 7.005 12.0049C7.005 12.4189 7.341 12.7549 7.755 12.7549H16.255C16.669 12.7549 17.005 12.4189 17.005 12.0049C17.005 11.5909 16.669 11.2549 16.255 11.2549Z"
+                  fill="#00639B"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="svgPlus hidden"
+              >
+                <path
+                  d="M12.002 2C17.52 2 22 6.48 22 11.998C22 17.515 17.52 21.995 12.002 21.995C6.485 21.995 2.005 17.515 2.005 11.998C2.005 6.48 6.485 2 12.002 2ZM11.255 11.25H7.755C7.341 11.25 7.005 11.586 7.005 12C7.005 12.414 7.341 12.75 7.755 12.75H11.255V16.25C11.255 16.664 11.591 17 12.005 17C12.419 17 12.755 16.664 12.755 16.25V12.75H16.255C16.669 12.75 17.005 12.414 17.005 12C17.005 11.586 16.669 11.25 16.255 11.25H12.755V7.75C12.755 7.336 12.419 7 12.005 7C11.591 7 11.255 7.336 11.255 7.75V11.25Z"
+                  fill="#00639B"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <label
+            class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
+            >Font-family:
+            <input
+              data-target="captionPreview"
+              list="font-names"
+              type="text"
+              placeholder="Choose a font..."
+              class="font-input flex px-3 py-2 items-center rounded-sm bg-[#F3F6FC] focus:outline-none placeholder:text-sm md:placeholder:text-[16px]"
+          /></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section
+      class="flex flex-col px-4 py-12 gap-12 self-stretch items-start xl:px-16 xl:py-24 xl:flex-row"
+    >
+      <!-- Pairing A [EMPTY] -->
+      <div class="flex flex-col gap-6 w-full xl:w-1/2">
+        <label class="text-[12px] text-[#6F6D6D] xl:text-[16px]"
+          >Pairing A</label
+        >
+        <div
+          id="pairingAEmpty"
+          class="h-[650px] hidden w-full flex-col items-center justify-center border border-dashed border-gray-500 rounded-sm text-[14px]"
+        >
+          Add a Pairing to Compare
+        </div>
+
+        <!-- Pairing A [FILLED] -->
+        <div
+          id="pairingA"
+          class="flex flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
+        >
+          <button
+            id="pairingAbtn"
+            class="cursor-pointer self-end"
+            type="button"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M9.997 0C15.515 0 19.995 4.48 19.995 9.997C19.995 15.515 15.515 19.995 9.997 19.995C4.48 19.995 0 15.515 0 9.997C0 4.48 4.48 0 9.997 0ZM14.25 9.25H5.75C5.336 9.25 5 9.586 5 10C5 10.414 5.336 10.75 5.75 10.75H14.25C14.664 10.75 15 10.414 15 10C15 9.586 14.664 9.25 14.25 9.25Z"
+                fill="#00639B"
+              />
+            </svg>
+          </button>
+          <div class="flex flex-col gap-4 xl:gap-5">
+            <h1 class="text-[20px] xl:text-[36px]">
+              Design is in the details.
+            </h1>
+            <h2 class="text-[14px] xl:text-[20px]">
+              Choosing the right type pairing matters.
+            </h2>
+          </div>
+
+          <div class="flex flex-col gap-9">
+            <p class="text-[12px] max-w-150px xl:text-[16px]">
+              Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
+              auctor blandit non neque. Feugiat ultrices ut augue egestas a
+              auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
+              sodales vitae id aliquet tincidunt. Volutpat cras mus nulla lacus
+              in. Egestas sit donec malesuada fermentum ac odio. Consequat
+              suspendisse maecenas enim tortor nunc pharetra a. Et gravida
+              convallis viverra sociis eget eu. Nulla non elit interdum interdum
+              ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
+              ipsum viverra ultricies semper.
+            </p>
+            <p class="text-[12px] text-[#6F6D6D] xl:text-[16px]">
+              Caption text provides context or supporting information.
+            </p>
+
+            <div
+              class="flex flex-col p-6 items-start gap-2 rounded-sm bg-[#F3F6FC]"
+            >
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
+                Heading:<span class="text-black">Inter</span>
+              </div>
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
+                Sub-Heading:<span class="text-black">Inter</span>
+              </div>
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
+                Body-Text:<span class="text-black">Inter</span>
+              </div>
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
+                Caption:<span class="text-black">Inter</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pairing B -->
+      <div class="flex flex-col gap-6 w-full xl:w-1/2">
+        <label class="text-[12px] text-[#6F6D6D] xl:text-[16px]"
+          >Pairing B</label
+        >
+        <div
+          id="pairingBEmpty"
+          class="hidden flex-col h-[650px] items-center justify-center border border-dashed border-gray-500 rounded-sm text-[14px]"
+        >
+          Add a Pairing to Compare
+        </div>
+        <!-- Pairing B [FILLED] -->
+        <div
+          id="pairingB"
+          class="flex flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
+        >
+          <button
+            id="pairingBbtn"
+            class="cursor-pointer self-end"
+            type="button"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M9.997 0C15.515 0 19.995 4.48 19.995 9.997C19.995 15.515 15.515 19.995 9.997 19.995C4.48 19.995 0 15.515 0 9.997C0 4.48 4.48 0 9.997 0ZM14.25 9.25H5.75C5.336 9.25 5 9.586 5 10C5 10.414 5.336 10.75 5.75 10.75H14.25C14.664 10.75 15 10.414 15 10C15 9.586 14.664 9.25 14.25 9.25Z"
+                fill="#00639B"
+              />
+            </svg>
+          </button>
+          <div class="flex flex-col gap-4 xl:gap-5">
+            <h1 class="text-[20px] xl:text-[36px]">
+              Design is in the details.
+            </h1>
+            <h2 class="text-[14px] xl:text-[20px]">
+              Choosing the right type pairing matters.
+            </h2>
+          </div>
+
+          <div class="flex flex-col gap-9">
+            <p class="text-[12px] max-w-150px xl:text-[16px]">
+              Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
+              auctor blandit non neque. Feugiat ultrices ut augue egestas a
+              auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
+              sodales vitae id aliquet tincidunt. Volutpat cras mus nulla lacus
+              in. Egestas sit donec malesuada fermentum ac odio. Consequat
+              suspendisse maecenas enim tortor nunc pharetra a. Et gravida
+              convallis viverra sociis eget eu. Nulla non elit interdum interdum
+              ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
+              ipsum viverra ultricies semper.
+            </p>
+            <p class="text-[12px] text-[#6F6D6D] xl:text-[16px]">
+              Caption text provides context or supporting information.
+            </p>
+
+            <div
+              class="flex flex-col p-6 items-start gap-2 rounded-sm bg-[#F3F6FC]"
+            >
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
+                Heading:<span class="text-black">Inter</span>
+              </div>
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
+                Sub-Heading:<span class="text-black">Inter</span>
+              </div>
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
+                Body-Text:<span class="text-black">Inter</span>
+              </div>
+              <div
+                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+              >
+                Caption:<span class="text-black">Inter</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="w-full py-4 text-center text-[8px] border border-t-2 border-[#E9EEF6] xl:py-16 xl:text-[14px]"
+    >
+      © 2026 <span class="font-urbanist">TypeMatch.</span> Fonts provided by
+      Google Fonts.
+    </footer>
+    <script type="module" src="/src/script.js"></script>
+  </body>
+</html>
