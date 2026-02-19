@@ -322,7 +322,7 @@
         >
         <div
           id="pairingAEmpty"
-          class="h-[650px] hidden w-full flex-col items-center justify-center border border-dashed border-gray-500 rounded-sm text-[14px]"
+          class="h-[650px] flex w-full flex-col items-center justify-center border border-dashed border-gray-500 rounded-sm text-[14px]"
         >
           Add a Pairing to Compare
         </div>
@@ -330,7 +330,7 @@
         <!-- Pairing A [FILLED] -->
         <div
           id="pairingA"
-          class="flex flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
+          class="hidden flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
         >
           <button
             id="pairingAbtn"
@@ -351,16 +351,19 @@
             </svg>
           </button>
           <div class="flex flex-col gap-4 xl:gap-5">
-            <h1 class="text-[20px] xl:text-[36px]">
+            <h1 id="pairingA-heading" class="text-[20px] xl:text-[36px]">
               Design is in the details.
             </h1>
-            <h2 class="text-[14px] xl:text-[20px]">
+            <h2 id="pairingA-subHeading" class="text-[14px] xl:text-[20px]">
               Choosing the right type pairing matters.
             </h2>
           </div>
 
           <div class="flex flex-col gap-9">
-            <p class="text-[12px] max-w-150px xl:text-[16px]">
+            <p
+              id="pairingA-body"
+              class="text-[12px] max-w-150px xl:text-[16px]"
+            >
               Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
               auctor blandit non neque. Feugiat ultrices ut augue egestas a
               auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
@@ -371,32 +374,48 @@
               ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
               ipsum viverra ultricies semper.
             </p>
-            <p class="text-[12px] text-[#6F6D6D] xl:text-[16px]">
+            <p
+              id="pairingA-caption"
+              class="text-[12px] text-[#6F6D6D] xl:text-[16px]"
+            >
               Caption text provides context or supporting information.
             </p>
-
             <div
               class="flex flex-col p-6 items-start gap-2 rounded-sm bg-[#F3F6FC]"
             >
               <div
-                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+                class="w-45 flex justify-between gap-2 text-[#6F6D6D] text-[12px] xl:text-[16px]"
               >
-                Heading:<span class="text-black">Inter</span>
+                Heading:
+                <span id="pairingA-heading-name" class="text-black font-label"
+                  >Inter</span
+                >
               </div>
               <div
-                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+                class="w-45 flex justify-between gap-2 text-[#6F6D6D] text-[12px] xl:text-[16px]"
               >
-                Sub-Heading:<span class="text-black">Inter</span>
+                Sub-Heading:
+                <span
+                  id="pairingA-subHeading-name"
+                  class="text-black font-label"
+                  >Inter</span
+                >
               </div>
               <div
-                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+                class="w-45 flex justify-between gap-2 text-[#6F6D6D] text-[12px] xl:text-[16px]"
               >
-                Body-Text:<span class="text-black">Inter</span>
+                Body-Text:
+                <span id="pairingA-body-name" class="text-black font-label"
+                  >Inter</span
+                >
               </div>
               <div
-                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+                class="w-45 flex justify-between gap-2 text-[#6F6D6D] text-[12px] xl:text-[16px]"
               >
-                Caption:<span class="text-black">Inter</span>
+                Caption:
+                <span id="pairingA-caption-name" class="text-black font-label"
+                  >Inter</span
+                >
               </div>
             </div>
           </div>
@@ -409,14 +428,14 @@
         >
         <div
           id="pairingBEmpty"
-          class="hidden flex-col h-[650px] items-center justify-center border border-dashed border-gray-500 rounded-sm text-[14px]"
+          class="flex flex-col h-[650px] items-center justify-center border border-dashed border-gray-500 rounded-sm text-[14px]"
         >
           Add a Pairing to Compare
         </div>
         <!-- Pairing B [FILLED] -->
         <div
           id="pairingB"
-          class="flex flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
+          class="hidden flex-col p-3 gap-5 border-2 border-[#E9EEF6] rounded-sm text-[16px] xl:p-8 xl:gap-9"
         >
           <button
             id="pairingBbtn"
@@ -437,16 +456,19 @@
             </svg>
           </button>
           <div class="flex flex-col gap-4 xl:gap-5">
-            <h1 class="text-[20px] xl:text-[36px]">
+            <h1 id="pairingB-heading" class="text-[20px] xl:text-[36px]">
               Design is in the details.
             </h1>
-            <h2 class="text-[14px] xl:text-[20px]">
+            <h id="pairingB-subheading" class="text-[14px] xl:text-[20px]">
               Choosing the right type pairing matters.
-            </h2>
+            </h>
           </div>
 
           <div class="flex flex-col gap-9">
-            <p class="text-[12px] max-w-150px xl:text-[16px]">
+            <p
+              id="pairingB-body"
+              class="text-[12px] max-w-150px xl:text-[16px]"
+            >
               Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
               auctor blandit non neque. Feugiat ultrices ut augue egestas a
               auctor. Amet risus egestas ac faucibus a arcu at viverra. Gravida
@@ -457,32 +479,48 @@
               ultricies nunc. Eu varius sapien lacinia magna tortor. Dictum sed
               ipsum viverra ultricies semper.
             </p>
-            <p class="text-[12px] text-[#6F6D6D] xl:text-[16px]">
+            <p
+              id="pairingB-caption"
+              class="text-[12px] text-[#6F6D6D] xl:text-[16px]"
+            >
               Caption text provides context or supporting information.
             </p>
-
             <div
               class="flex flex-col p-6 items-start gap-2 rounded-sm bg-[#F3F6FC]"
             >
               <div
-                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+                class="w-45 flex justify-between gap-2 text-[#6F6D6D] text-[12px] xl:text-[16px]"
               >
-                Heading:<span class="text-black">Inter</span>
+                Heading:
+                <span id="pairingB-heading-name" class="text-black font-label"
+                  >Inter</span
+                >
               </div>
               <div
-                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+                class="w-45 flex justify-between gap-2 text-[#6F6D6D] text-[12px] xl:text-[16px]"
               >
-                Sub-Heading:<span class="text-black">Inter</span>
+                Sub-Heading:
+                <span
+                  id="pairingB-subHeading-name"
+                  class="text-black font-label"
+                  >Inter</span
+                >
               </div>
               <div
-                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+                class="w-45 flex justify-between gap-2 text-[#6F6D6D] text-[12px] xl:text-[16px]"
               >
-                Body-Text:<span class="text-black">Inter</span>
+                Body-Text:
+                <span id="pairingB-body-name" class="text-black font-label"
+                  >Inter</span
+                >
               </div>
               <div
-                class="w-45 flex justify-between text-[#6F6D6D] text-[12px] xl:text-[16px]"
+                class="w-45 flex justify-between gap-2 text-[#6F6D6D] text-[12px] xl:text-[16px]"
               >
-                Caption:<span class="text-black">Inter</span>
+                Caption:
+                <span id="pairingB-caption-name" class="text-black font-label"
+                  >Inter</span
+                >
               </div>
             </div>
           </div>

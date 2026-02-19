@@ -6,7 +6,7 @@ let allFonts = []; // This will hold the 1,500+ font names
 
 let currentFonts = {
   heading: "Inter",
-  subheading: "Inter",
+  subHeading: "Inter",
   body: "Inter",
   caption: "Inter",
 };
@@ -138,6 +138,9 @@ pairingBButton.addEventListener("click", () => {
   resetPairing("pairingB");
 });
 
+addPairingButton.addEventListener("click", () => {
+  saveCurrentPairing();
+});
 /* =========================
    CORE FUNCTIONS
 ========================= */
@@ -161,12 +164,29 @@ function resetPairing(pairingKey) {
   const pairing = document.getElementById(pairingKey);
   const emptyState = document.getElementById(`${pairingKey}Empty`);
 
+  // 1. Hide the content and show the empty state
   button.classList.add("hidden");
   pairing.classList.add("hidden");
   emptyState.classList.remove("hidden");
   emptyState.classList.add("flex");
-}
 
+  // 2. Reset the internal labels back to default "Inter"
+  const roles = ["heading", "subHeading", "body", "caption"];
+
+  roles.forEach((role) => {
+    const nameLabel = document.getElementById(`${pairingKey}-${role}-name`);
+    if (nameLabel) {
+      nameLabel.innerText = "Inter";
+      nameLabel.classList.replace("text-zinc-400", "text-black");
+    }
+
+    // Also ensure the individual preview lines are visible for the next use
+    const savedElement = document.getElementById(`${pairingKey}-${role}`);
+    if (savedElement) {
+      savedElement.classList.remove("hidden");
+    }
+  });
+}
 function changeFont(fontName, targetElement) {
   // 1. Identify which "role" this font is for (e.g., heading, body)
   const role = targetElement.id.replace("Preview", "").toLowerCase();
@@ -185,4 +205,60 @@ function changeFont(fontName, targetElement) {
 
   // 4. Apply the style to the element
   targetElement.style.fontFamily = `'${fontName}', sans-serif`;
+}
+
+function saveCurrentPairing() {
+  const pairingA = document.getElementById("pairingA");
+  const pairingB = document.getElementById("pairingB");
+
+  // Determine which slot to fill
+  let targetKey = "";
+  if (pairingA.classList.contains("hidden")) {
+    targetKey = "pairingA";
+  } else if (pairingB.classList.contains("hidden")) {
+    targetKey = "pairingB";
+  } else {
+    alert("Both slots are full!");
+    return;
+  }
+
+  const pairingContainer = document.getElementById(targetKey);
+  const emptyState = document.getElementById(`${targetKey}Empty`);
+  const resetBtn = document.getElementById(`${targetKey}btn`);
+
+  pairingContainer.classList.remove("hidden");
+  pairingContainer.classList.add("flex");
+
+  resetBtn.classList.remove("hidden");
+  emptyState.classList.add("hidden");
+  emptyState.classList.remove("flex");
+
+  // Loop through roles: heading, subheading, body, caption
+  for (const [role, fontName] of Object.entries(currentFonts)) {
+    const mainPreview = document.getElementById(`${role}Preview`);
+    const savedElement = document.getElementById(`${targetKey}-${role}`);
+
+    // Target the specific span we just created in the HTML
+    const nameLabel = document.getElementById(`${targetKey}-${role}-name`);
+
+    if (mainPreview && savedElement) {
+      if (mainPreview.classList.contains("hidden")) {
+        // 1. Role is toggled OFF
+        savedElement.classList.add("hidden");
+        if (nameLabel) {
+          nameLabel.innerText = "N/A";
+          nameLabel.classList.replace("text-black", "text-zinc-400"); // Visual cue for N/A
+        }
+      } else {
+        // 2. Role is toggled ON
+        savedElement.classList.remove("hidden");
+        savedElement.style.fontFamily = `'${fontName}', sans-serif`;
+
+        if (nameLabel) {
+          nameLabel.innerText = fontName;
+          nameLabel.classList.replace("text-zinc-400", "text-black"); // Restore black text
+        }
+      }
+    }
+  }
 }
