@@ -114,6 +114,9 @@
 
       <!-- Controls Mobile -->
       <form
+        onsubmit="event.preventDefault()"
+        return
+        false;
         id="controls-mobile"
         class="hidden absolute py-12 px-4 w-full top-0 left-0 z-10 h-screen bg-white justify-between self-stretch items-start"
       >
@@ -349,6 +352,9 @@
 
       <!-- Controls -->
       <form
+        onsubmit="event.preventDefault()"
+        return
+        false;
         class="hidden w-1/2 font-inter flex-col py-6 gap-10 items-center sm:flex"
       >
         <div class="field flex flex-col gap-3">
