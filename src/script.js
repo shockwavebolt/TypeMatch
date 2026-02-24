@@ -29,7 +29,6 @@ const inputs = document.querySelectorAll(".font-input");
 const mobileMenuButton = document.getElementById("mobileMenuBtn");
 const mobileControls = document.getElementById("controls-mobile");
 const closeMenuButton = document.getElementById("closeMenuBtn");
-const myForm = document.querySelector("form");
 
 /* =========================
    INITIALIZATION
@@ -87,7 +86,7 @@ buttons.forEach((button) => {
     previewElement.classList.toggle("hidden");
 
     const field = button.closest(".field");
-    const input = field.querySelector("#input");
+    const input = field.querySelector(".font-input");
 
     field.classList.toggle("text-[#C2C2C2]");
     input.disabled = !input.disabled;
@@ -107,6 +106,7 @@ inputs.forEach((input) => {
 
       if (!fontName) return; // Don't do anything if input is empty
       changeFont(fontName, previewElement);
+      input.placeholder = fontName;
       input.value = "";
     }
   });
@@ -157,10 +157,6 @@ closeMenuButton.addEventListener("click", () => {
   mobileControls.classList.add("hidden");
   mobileControls.classList.remove("flex");
   document.body.style.overflow = "auto";
-});
-
-myForm.addEventListener("submit", (event) => {
-  event.preventDefault();
 });
 
 /* =========================
