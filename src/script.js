@@ -26,6 +26,10 @@ const pairingBButton = document.getElementById("pairingBbtn");
 
 const inputs = document.querySelectorAll(".font-input");
 
+const mobileMenuButton = document.getElementById("mobileMenuBtn");
+const mobileControls = document.getElementById("controls-mobile");
+const closeMenuButton = document.getElementById("closeMenuBtn");
+
 /* =========================
    INITIALIZATION
 ========================= */
@@ -141,6 +145,19 @@ pairingBButton.addEventListener("click", () => {
 addPairingButton.addEventListener("click", () => {
   saveCurrentPairing();
 });
+
+mobileMenuButton.addEventListener("click", () => {
+  mobileControls.classList.remove("hidden");
+  mobileControls.classList.add("flex");
+  document.body.style.overflow = "hidden";
+});
+
+closeMenuButton.addEventListener("click", () => {
+  mobileControls.classList.add("hidden");
+  mobileControls.classList.remove("flex");
+  document.body.style.overflow = "auto";
+});
+
 /* =========================
    CORE FUNCTIONS
 ========================= */
