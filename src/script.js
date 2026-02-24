@@ -29,6 +29,7 @@ const inputs = document.querySelectorAll(".font-input");
 const mobileMenuButton = document.getElementById("mobileMenuBtn");
 const mobileControls = document.getElementById("controls-mobile");
 const closeMenuButton = document.getElementById("closeMenuBtn");
+const myForm = document.querySelector("form");
 
 /* =========================
    INITIALIZATION
@@ -156,6 +157,10 @@ closeMenuButton.addEventListener("click", () => {
   mobileControls.classList.add("hidden");
   mobileControls.classList.remove("flex");
   document.body.style.overflow = "auto";
+});
+
+myForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 });
 
 /* =========================
