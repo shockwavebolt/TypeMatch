@@ -83,6 +83,7 @@ buttons.forEach((button) => {
 
     const previewTarget = button.getAttribute("data-target");
     const previewElement = document.getElementById(previewTarget);
+
     previewElement.classList.toggle("hidden");
 
     const field = button.closest(".field");
