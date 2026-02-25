@@ -30,6 +30,9 @@ const mobileMenuButton = document.getElementById("mobileMenuBtn");
 const mobileControls = document.getElementById("controls-mobile");
 const closeMenuButton = document.getElementById("closeMenuBtn");
 
+const resetFontButtons = document.querySelectorAll(".resetFontBtn");
+const fontSelectButtons = document.querySelectorAll(".fontSelectBtn");
+
 /* =========================
    INITIALIZATION
 ========================= */
@@ -78,19 +81,51 @@ async function fetchFontList() {
 // Toggle Sections
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    button.querySelector(".svgMinus").classList.toggle("hidden");
-    button.querySelector(".svgPlus").classList.toggle("hidden");
-
+    // 1. Identify the Target
     const previewTarget = button.getAttribute("data-target");
     const previewElement = document.getElementById(previewTarget);
+    if (!previewElement) return;
 
+    // 2. Toggle visibility and capture the state
     previewElement.classList.toggle("hidden");
+    const isHidden = previewElement.classList.contains("hidden");
 
+    // 3. Update the Toggle Button SVGs (Plus/Minus)
+    const svgMinus = button.querySelector(".svgMinus");
+    const svgPlus = button.querySelector(".svgPlus");
+    if (svgMinus && svgPlus) {
+      svgMinus.classList.toggle("hidden", isHidden);
+      svgPlus.classList.toggle("hidden", !isHidden);
+    }
+
+    // 4. Update the sibling elements within the same field
     const field = button.closest(".field");
     const input = field.querySelector(".font-input");
+    const fontSelectionBtn = field.querySelector(".fontSelectBtn");
+    const resetFontBtn = field.querySelector(".resetFontBtn");
 
-    field.classList.toggle("text-[#C2C2C2]");
-    input.disabled = !input.disabled;
+    // Change field text color
+    field.classList.toggle("text-[#C2C2C2]", isHidden);
+
+    // Disable/Enable Input
+    if (input) {
+      input.disabled = isHidden;
+    }
+
+    // Disable/Enable Reset Button
+    if (resetFontBtn) {
+      resetFontBtn.disabled = isHidden;
+      resetFontBtn.classList.toggle("text-[#C2C2C2]", isHidden);
+      resetFontBtn.classList.toggle("text-[#00639B]", !isHidden);
+    }
+
+    // Disable/Enable the Arrow Button and change its color
+    if (fontSelectionBtn) {
+      fontSelectionBtn.disabled = isHidden;
+      // This ensures the color stays in sync with the disabled state
+      fontSelectionBtn.classList.toggle("text-[#C2C2C2]", isHidden);
+      fontSelectionBtn.classList.toggle("text-[#00639B]", !isHidden);
+    }
 
     updateStatusMessage();
   });
@@ -132,6 +167,52 @@ inputs.forEach((input) => {
     datalist.innerHTML = matches
       .map((font) => `<option value="${font}">`)
       .join("");
+  });
+});
+
+// Selected Font buttons
+fontSelectButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const field = btn.closest(".field");
+    const input = field.querySelector(".font-input");
+
+    // Don't do anything if disabled or empty
+    if (input.disabled || !input.value.trim()) return;
+
+    const fontName = input.value.trim();
+    const previewTarget = input.getAttribute("data-target"); // Get target from sibling input
+    const previewElement = document.getElementById(previewTarget);
+
+    changeFont(fontName, previewElement);
+
+    // Update placeholder and clear like we did before
+    input.placeholder = fontName;
+    input.value = "";
+  });
+});
+
+// Reset Font buttons (
+resetFontButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // 1. Get the context of the field
+    const field = btn.closest(".field");
+    const input = field.querySelector(".font-input");
+
+    // Prevent action if the field is currently toggled off/disabled
+    if (btn.disabled) return;
+
+    // 2. Identify the target preview element
+    const previewTarget = input.getAttribute("data-target");
+    const previewElement = document.getElementById(previewTarget);
+
+    if (!previewElement) return;
+
+    // 3. Reset the font using your existing core function
+    changeFont("Inter", previewElement);
+
+    // 4. Reset the input UI to reflect the default state
+    input.value = "";
+    input.placeholder = "Inter";
   });
 });
 
@@ -206,6 +287,7 @@ function resetPairing(pairingKey) {
     }
   });
 }
+
 function changeFont(fontName, targetElement) {
   // 1. Identify which "role" this font is for (e.g., heading, body)
   const role = targetElement.id.replace("Preview", "").toLowerCase();
