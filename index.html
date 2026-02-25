@@ -45,6 +45,24 @@
     >
       <!-- Preview Box -->
       <div class="font-inter flex flex-col gap-5 items-start xl:w-1/2 xl:gap-9">
+        <div
+          id="statusMessage"
+          class="hidden self-start gap-2 text-[14px] md:text-[16px] text-[#6F6D6D]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 4C7.59 4 4 7.59 4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4ZM12 11C12.55 11 13 11.45 13 12V16C13 16.55 12.55 17 12 17C11.45 17 11 16.55 11 16V12C11 11.45 11.45 11 12 11ZM13 7V9H11V7H13Z"
+              fill="#6F6D6D"
+            />
+          </svg>
+          <p>Add a preview item.</p>
+        </div>
         <div class="flex flex-col gap-4 xl:gap-5">
           <h1
             id="headingPreview"
@@ -82,13 +100,6 @@
           </p>
         </div>
 
-        <p
-          id="statusMessage"
-          class="hidden text-[18px] items-center text-[#6F6D6D]"
-        >
-          Add a preview item.
-        </p>
-
         <button
           id="AddPairingBtn"
           class="flex px-3 py-2 border rounded-sm bg-[#00639B] text-white text-[14px] cursor-pointer xl:text-[16px]"
@@ -120,10 +131,26 @@
         id="controls-mobile"
         class="hidden absolute py-12 px-4 w-full top-0 left-0 z-10 h-screen bg-white justify-between items-start box-border"
       >
-        <div
-          class="font-inter flex flex-col gap-10  flex-1 min-w-0"
-        >
-          <div class="field flex flex-col gap-3">
+        <div class="font-inter flex flex-col gap-10 flex-1 min-w-0">
+          <div class="field flex flex-col gap-2">
+            <div class="flex pb-2 mb-8 gap-2 w-full items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 4C7.59 4 4 7.59 4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4ZM12 11C12.55 11 13 11.45 13 12V16C13 16.55 12.55 17 12 17C11.45 17 11 16.55 11 16V12C11 11.45 11.45 11 12 11ZM13 7V9H11V7H13Z"
+                  fill="#6F6D6D"
+                />
+              </svg>
+              <h2 class="text-[14px] md:text-[16px] text-[#6F6D6D]">
+                Pick a Font from Google Fonts.
+              </h2>
+            </div>
+
             <div class="flex gap-2">
               <label class="items-center text-[14px] md:text-[16px]"
                 >Heading
@@ -164,9 +191,11 @@
             </div>
 
             <label
-              class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap "
+              class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
               >Font-family:
-              <div class="flex px-3 py-2 min-w-0 flex-1 items-center rounded-sm bg-[#F3F6FC]">
+              <div
+                class="flex px-3 py-2 min-w-0 flex-1 items-center rounded-sm bg-[#F3F6FC]"
+              >
                 <input
                   list="font-names"
                   data-target="headingPreview"
@@ -261,7 +290,9 @@
               class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
               >Font-family:
 
-              <div class="flex px-3 py-2 min-w-0 flex-1 items-center rounded-sm bg-[#F3F6FC]">
+              <div
+                class="flex px-3 py-2 min-w-0 flex-1 items-center rounded-sm bg-[#F3F6FC]"
+              >
                 <input
                   data-target="subHeadingPreview"
                   list="font-names"
@@ -314,9 +345,7 @@
 
           <div class="field flex flex-col gap-3">
             <div class="flex gap-2">
-              <label class=" text-[14px] md:text-[16px]"
-                >Body-Text
-              </label>
+              <label class="text-[14px] md:text-[16px]">Body-Text </label>
               <button
                 type="button"
                 class="toggleButton cursor-pointer"
@@ -353,9 +382,11 @@
             </div>
 
             <label
-              class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap "
+              class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
               >Font-family:
-              <div class="flex px-3 py-2 min-w-0 flex-1 items-center rounded-sm bg-[#F3F6FC]">
+              <div
+                class="flex px-3 py-2 min-w-0 flex-1 items-center rounded-sm bg-[#F3F6FC]"
+              >
                 <input
                   data-target="bodyPreview"
                   list="font-names"
@@ -408,9 +439,7 @@
 
           <div class="field flex flex-col gap-3">
             <div class="flex gap-2">
-              <label class=" text-[14px] md:text-[16px]"
-                >Caption
-              </label>
+              <label class="text-[14px] md:text-[16px]">Caption </label>
               <button
                 type="button"
                 class="toggleButton cursor-pointer"
@@ -447,9 +476,11 @@
             </div>
 
             <label
-              class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap "
+              class="flex gap-2 items-center text-[14px] md:text-[16px] whitespace-nowrap"
               >Font-family:
-              <div class="flex px-3 py-2 min-w-0 flex-1 items-center rounded-sm bg-[#F3F6FC]">
+              <div
+                class="flex px-3 py-2 min-w-0 flex-1 items-center rounded-sm bg-[#F3F6FC]"
+              >
                 <input
                   data-target="captionPreview"
                   list="font-names"
@@ -523,6 +554,23 @@
         class="hidden w-1/2 font-inter flex-col py-6 gap-10 items-center sm:flex"
       >
         <div class="field flex flex-col gap-3">
+          <div class="flex pb-2 mb-8 gap-2 w-full items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 4C7.59 4 4 7.59 4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4ZM12 11C12.55 11 13 11.45 13 12V16C13 16.55 12.55 17 12 17C11.45 17 11 16.55 11 16V12C11 11.45 11.45 11 12 11ZM13 7V9H11V7H13Z"
+                fill="#6F6D6D"
+              />
+            </svg>
+            <h2 class="text-[14px] md:text-[16px] text-[#6F6D6D]">
+              Pick a Font from Google Fonts.
+            </h2>
+          </div>
           <div class="flex gap-2">
             <label class="items-center text-[14px] md:text-[16px]"
               >Heading

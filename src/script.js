@@ -252,9 +252,12 @@ function updateStatusMessage() {
 
   if (allHidden) {
     statusMessage.classList.remove("hidden");
+    statusMessage.classList.add("flex");
+
     addPairingButton.classList.add("hidden");
   } else {
     statusMessage.classList.add("hidden");
+    statusMessage.classList.remove("flex");
     addPairingButton.classList.remove("hidden");
   }
 }
