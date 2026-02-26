@@ -17,7 +17,8 @@ let currentFonts = {
 
 const buttons = document.querySelectorAll(".toggleButton");
 const previewItems = document.querySelectorAll(".previewItem");
-const statusMessage = document.getElementById("statusMessage");
+const missingMessage = document.getElementById("missingPreviewMessage");
+const fullMessage = document.getElementById("slotsFullMessage");
 const addPairingButton = document.getElementById("AddPairingBtn");
 const headingPreview = document.getElementById("headingPreview");
 
@@ -127,7 +128,7 @@ buttons.forEach((button) => {
       fontSelectionBtn.classList.toggle("text-[#00639B]", !isHidden);
     }
 
-    updateStatusMessage();
+    missingPreviewMessage();
   });
 });
 
@@ -245,19 +246,19 @@ closeMenuButton.addEventListener("click", () => {
    CORE FUNCTIONS
 ========================= */
 
-function updateStatusMessage() {
+function missingPreviewMessage() {
   const allHidden = [...previewItems].every((item) =>
     item.classList.contains("hidden"),
   );
 
   if (allHidden) {
-    statusMessage.classList.remove("hidden");
-    statusMessage.classList.add("flex");
+    missingMessage.classList.remove("hidden");
+    missingMessage.classList.add("flex");
 
     addPairingButton.classList.add("hidden");
   } else {
-    statusMessage.classList.add("hidden");
-    statusMessage.classList.remove("flex");
+    missingMessage.classList.add("hidden");
+
     addPairingButton.classList.remove("hidden");
   }
 }
@@ -289,6 +290,8 @@ function resetPairing(pairingKey) {
       savedElement.classList.remove("hidden");
     }
   });
+
+  slotsFullMessage(); // Check if we need to show/hide the "slots full" message
 }
 
 function changeFont(fontName, targetElement) {
@@ -322,7 +325,7 @@ function saveCurrentPairing() {
   } else if (pairingB.classList.contains("hidden")) {
     targetKey = "pairingB";
   } else {
-    alert("Both slots are full!");
+    slotsFullMessage();
     return;
   }
 
@@ -364,5 +367,29 @@ function saveCurrentPairing() {
         }
       }
     }
+  }
+}
+
+function slotsFullMessage() {
+  const pairingA = document.getElementById("pairingA");
+  const pairingB = document.getElementById("pairingB");
+
+  // A slot is "Full" if it is NOT hidden
+  const isA_Full = !pairingA.classList.contains("hidden");
+  const isB_Full = !pairingB.classList.contains("hidden");
+
+  // We only show the message if BOTH are full
+  if (isA_Full && isB_Full) {
+    // SHOW MESSAGE
+    fullMessage.classList.replace("hidden", "flex"); // Show the wrapper/icon
+
+    // HIDE BUTTON
+    addPairingButton.classList.replace("flex", "hidden");
+  } else {
+    // HIDE MESSAGE
+    fullMessage.classList.replace("flex", "hidden");
+
+    // Show the button if either slot is empty
+    addPairingButton.classList.replace("hidden", "flex");
   }
 }
