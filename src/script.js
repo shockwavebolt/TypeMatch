@@ -213,7 +213,7 @@ resetFontButtons.forEach((btn) => {
 
     // 4. Reset the input UI to reflect the default state
     input.value = "";
-    input.placeholder = "Inter";
+    input.placeholder = "Choose a font...";
   });
 });
 
