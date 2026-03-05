@@ -1,5 +1,48 @@
 @import "tailwindcss";
 
+/* =========================
+   COLOR TOKENS
+========================= */
+
+:root {
+  --color-primary: #00639b;
+  --color-muted: #6f6d6d;
+  --color-surface: #f3f6fc;
+  --color-disabled: #c2c2c2;
+  --color-border: #e9eef6;
+  --color-pairing-border: #b8c4d4;
+}
+
+[data-theme="dark"] {
+  --color-primary: #00639b;
+  --color-muted: #a0a0a0;
+  --color-surface: #333333;
+  --color-disabled: #555555;
+  --color-border: #00639b;
+  --color-pairing-border: #333333;
+}
+
+[data-theme="dark"] body {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+[data-theme="dark"] #controls-mobile {
+  background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .text-black {
+  color: #ffffff;
+}
+
+[data-theme="dark"] #themeToggleBtn path {
+  fill: #ffffff;
+}
+
+/* =========================
+   CUSTOM UTILITIES
+========================= */
+
 @layer utilities {
   .font-urbanist {
     font-family: "Urbanist", sans-serif;
@@ -8,4 +51,40 @@
   .font-inter {
     font-family: "Inter", sans-serif;
   }
+}
+
+@utility text-primary {
+  color: var(--color-primary);
+}
+
+@utility bg-primary {
+  background-color: var(--color-primary);
+}
+
+@utility fill-primary {
+  fill: var(--color-primary);
+}
+
+@utility text-muted {
+  color: var(--color-muted);
+}
+
+@utility fill-muted {
+  fill: var(--color-muted);
+}
+
+@utility bg-surface {
+  background-color: var(--color-surface);
+}
+
+@utility text-disabled {
+  color: var(--color-disabled);
+}
+
+@utility border-subtle {
+  border-color: var(--color-border);
+}
+
+@utility border-pairing {
+  border-color: var(--color-pairing-border);
 }

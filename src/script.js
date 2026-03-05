@@ -30,6 +30,7 @@ const inputs = document.querySelectorAll(".font-input");
 const mobileMenuButton = document.getElementById("mobileMenuBtn");
 const mobileControls = document.getElementById("controls-mobile");
 const closeMenuButton = document.getElementById("closeMenuBtn");
+const themeToggleBtn = document.getElementById("themeToggleBtn");
 
 const resetFontButtons = document.querySelectorAll(".resetFontBtn");
 const fontSelectButtons = document.querySelectorAll(".fontSelectBtn");
@@ -106,7 +107,7 @@ buttons.forEach((button) => {
     const resetFontBtn = field.querySelector(".resetFontBtn");
 
     // Change field text color
-    field.classList.toggle("text-[#C2C2C2]", isHidden);
+    field.classList.toggle("text-disabled", isHidden);
 
     // Disable/Enable Input
     if (input) {
@@ -116,16 +117,16 @@ buttons.forEach((button) => {
     // Disable/Enable Reset Button
     if (resetFontBtn) {
       resetFontBtn.disabled = isHidden;
-      resetFontBtn.classList.toggle("text-[#C2C2C2]", isHidden);
-      resetFontBtn.classList.toggle("text-[#00639B]", !isHidden);
+      resetFontBtn.classList.toggle("text-disabled", isHidden);
+      resetFontBtn.classList.toggle("text-primary", !isHidden);
     }
 
     // Disable/Enable the Arrow Button and change its color
     if (fontSelectionBtn) {
       fontSelectionBtn.disabled = isHidden;
       // This ensures the color stays in sync with the disabled state
-      fontSelectionBtn.classList.toggle("text-[#C2C2C2]", isHidden);
-      fontSelectionBtn.classList.toggle("text-[#00639B]", !isHidden);
+      fontSelectionBtn.classList.toggle("text-disabled", isHidden);
+      fontSelectionBtn.classList.toggle("text-primary", !isHidden);
     }
 
     missingPreviewMessage();
@@ -240,6 +241,11 @@ closeMenuButton.addEventListener("click", () => {
   mobileControls.classList.add("hidden");
   mobileControls.classList.remove("flex");
   document.body.style.overflow = "auto";
+});
+
+themeToggleBtn.addEventListener("click", () => {
+  const html = document.documentElement;
+  html.dataset.theme = html.dataset.theme === "dark" ? "" : "dark";
 });
 
 /* =========================
