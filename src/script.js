@@ -11,6 +11,8 @@ let currentFonts = {
   caption: "Inter",
 };
 
+let savedPairingFonts = new Set(); // Fonts used in saved pairings — must stay loaded
+
 /* =========================
    DOM REFERENCES
 ========================= */
@@ -309,8 +311,9 @@ function changeFont(fontName, targetElement) {
   const role = targetElement.id.replace("Preview", "");
   currentFonts[role] = fontName;
 
-  // 2. Build a combined URL for ALL active fonts
-  const fontStrings = Object.values(currentFonts)
+  // 2. Build a combined URL for ALL active fonts + any fonts used in saved pairings
+  const allNeededFonts = new Set([...Object.values(currentFonts), ...savedPairingFonts]);
+  const fontStrings = [...allNeededFonts]
     .map((name) => name.replace(/ /g, "+"))
     .join("|");
 
@@ -370,6 +373,7 @@ function saveCurrentPairing() {
         // 2. Role is toggled ON
         savedElement.classList.remove("hidden");
         savedElement.style.fontFamily = `'${fontName}', sans-serif`;
+        savedPairingFonts.add(fontName); // Keep this font loaded even if preview changes
 
         if (nameLabel) {
           nameLabel.innerText = fontName;
