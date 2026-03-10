@@ -143,8 +143,10 @@ inputs.forEach((input) => {
       const previewElement = document.getElementById(previewTarget);
 
       if (!fontName) return; // Don't do anything if input is empty
-      changeFont(fontName, previewElement);
-      input.placeholder = fontName;
+      const match = allFonts.find((f) => f.toLowerCase() === fontName.toLowerCase());
+      if (!match) return;
+      changeFont(match, previewElement);
+      input.placeholder = match;
       input.value = "";
     }
   });
@@ -185,10 +187,12 @@ fontSelectButtons.forEach((btn) => {
     const previewTarget = input.getAttribute("data-target"); // Get target from sibling input
     const previewElement = document.getElementById(previewTarget);
 
-    changeFont(fontName, previewElement);
+    const match = allFonts.find((f) => f.toLowerCase() === fontName.toLowerCase());
+    if (!match) return;
+    changeFont(match, previewElement);
 
     // Update placeholder and clear like we did before
-    input.placeholder = fontName;
+    input.placeholder = match;
     input.value = "";
   });
 });
@@ -302,7 +306,7 @@ function resetPairing(pairingKey) {
 
 function changeFont(fontName, targetElement) {
   // 1. Identify which "role" this font is for (e.g., heading, body)
-  const role = targetElement.id.replace("Preview", "").toLowerCase();
+  const role = targetElement.id.replace("Preview", "");
   currentFonts[role] = fontName;
 
   // 2. Build a combined URL for ALL active fonts
