@@ -5,38 +5,53 @@
 ========================= */
 
 :root {
-  --color-primary: #00639b;
-  --color-muted: #6f6d6d;
-  --color-surface: #f3f6fc;
-  --color-disabled: #c2c2c2;
-  --color-border: #e9eef6;
-  --color-pairing-border: #b8c4d4;
+  --color-primary: #3d405b;
+  --color-muted: #a89b85;
+  --color-surface: #faf9f0;
+  --color-disabled: #a89b85;
+  --color-border: #3d405b;
+  --color-pairing-border: #f6deb6;
+  --color-card: #f6deb6;
 }
 
 [data-theme="dark"] {
-  --color-primary: #00639b;
+  --color-primary: #8b80f9;
   --color-muted: #a0a0a0;
   --color-surface: #333333;
   --color-disabled: #555555;
-  --color-border: #00639b;
+  --color-border: #8b80f9;
   --color-pairing-border: #333333;
+  --color-card: #2a2b38;
+}
+
+button {
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+body {
+  background-color: #f8e6c9;
 }
 
 [data-theme="dark"] body {
-  background-color: #1e1e1e;
-  color: #ffffff;
+  background-color: #101118;
+  color: #faf9f0;
 }
 
 [data-theme="dark"] #controls-mobile {
-  background-color: #1e1e1e;
+  background-color: #101118;
 }
 
 [data-theme="dark"] .text-black {
-  color: #ffffff;
+  color: #faf9f0;
 }
 
 [data-theme="dark"] #themeToggleBtn path {
-  fill: #ffffff;
+  fill: #faf9f0;
 }
 
 /* =========================
@@ -44,12 +59,12 @@
 ========================= */
 
 @layer utilities {
-  .font-urbanist {
-    font-family: "Urbanist", sans-serif;
+  .font-forum {
+    font-family: "Forum", serif;
   }
 
-  .font-inter {
-    font-family: "Inter", sans-serif;
+  .font-plus-jakarta-sans {
+    font-family: "Plus Jakarta Sans", sans-serif;
   }
 }
 
@@ -87,4 +102,8 @@
 
 @utility border-pairing {
   border-color: var(--color-pairing-border);
+}
+
+@utility bg-card {
+  background-color: var(--color-card);
 }

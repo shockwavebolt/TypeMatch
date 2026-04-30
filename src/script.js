@@ -5,10 +5,10 @@
 let allFonts = []; // This will hold the 1,500+ font names
 
 let currentFonts = {
-  heading: "Inter",
-  subHeading: "Inter",
-  body: "Inter",
-  caption: "Inter",
+  heading: "Forum",
+  subHeading: "Forum",
+  body: "Plus Jakarta Sans",
+  caption: "Forum",
 };
 
 let savedPairingFonts = new Set(); // Fonts used in saved pairings — must stay loaded
@@ -56,6 +56,11 @@ async function initApp() {
   fontLoader.id = "dynamic-font-loader";
   fontLoader.rel = "stylesheet";
   document.head.appendChild(fontLoader);
+
+  for (const [role, fontName] of Object.entries(currentFonts)) {
+    const el = document.getElementById(`${role}Preview`);
+    if (el) changeFont(fontName, el);
+  }
 }
 
 // Call it immediately
@@ -145,7 +150,9 @@ inputs.forEach((input) => {
       const previewElement = document.getElementById(previewTarget);
 
       if (!fontName) return; // Don't do anything if input is empty
-      const match = allFonts.find((f) => f.toLowerCase() === fontName.toLowerCase());
+      const match = allFonts.find(
+        (f) => f.toLowerCase() === fontName.toLowerCase(),
+      );
       if (!match) return;
       changeFont(match, previewElement);
       input.placeholder = match;
@@ -189,7 +196,9 @@ fontSelectButtons.forEach((btn) => {
     const previewTarget = input.getAttribute("data-target"); // Get target from sibling input
     const previewElement = document.getElementById(previewTarget);
 
-    const match = allFonts.find((f) => f.toLowerCase() === fontName.toLowerCase());
+    const match = allFonts.find(
+      (f) => f.toLowerCase() === fontName.toLowerCase(),
+    );
     if (!match) return;
     changeFont(match, previewElement);
 
@@ -216,7 +225,16 @@ resetFontButtons.forEach((btn) => {
     if (!previewElement) return;
 
     // 3. Reset the font using your existing core function
-    changeFont("Inter", previewElement);
+    const roleDefaults = {
+      headingPreview: "Forum",
+      subHeadingPreview: "Forum",
+      bodyPreview: "Plus Jakarta Sans",
+      captionPreview: "Forum",
+    };
+    changeFont(
+      roleDefaults[previewTarget] ?? "Plus Jakarta Sans",
+      previewElement,
+    );
 
     // 4. Reset the input UI to reflect the default state
     input.value = "";
@@ -286,13 +304,18 @@ function resetPairing(pairingKey) {
   emptyState.classList.remove("hidden");
   emptyState.classList.add("flex");
 
-  // 2. Reset the internal labels back to default "Inter"
+  const roleDefaults = {
+    heading: "Forum",
+    subHeading: "Forum",
+    body: "Plus Jakarta Sans",
+    caption: "Plus Jakarta Sans",
+  };
   const roles = ["heading", "subHeading", "body", "caption"];
 
   roles.forEach((role) => {
     const nameLabel = document.getElementById(`${pairingKey}-${role}-name`);
     if (nameLabel) {
-      nameLabel.innerText = "Inter";
+      nameLabel.innerText = roleDefaults[role];
       nameLabel.classList.replace("text-zinc-400", "text-black");
     }
 
@@ -312,7 +335,10 @@ function changeFont(fontName, targetElement) {
   currentFonts[role] = fontName;
 
   // 2. Build a combined URL for ALL active fonts + any fonts used in saved pairings
-  const allNeededFonts = new Set([...Object.values(currentFonts), ...savedPairingFonts]);
+  const allNeededFonts = new Set([
+    ...Object.values(currentFonts),
+    ...savedPairingFonts,
+  ]);
   const fontStrings = [...allNeededFonts]
     .map((name) => name.replace(/ /g, "+"))
     .join("|");
@@ -381,6 +407,12 @@ function saveCurrentPairing() {
         }
       }
     }
+  }
+
+  if (targetKey === "pairingB") {
+    document
+      .getElementById("comparison-section")
+      .scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 

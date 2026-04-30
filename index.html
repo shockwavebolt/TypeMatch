@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Forum&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
 
@@ -18,13 +18,13 @@
     <section
       class="flex justify-between px-4 py-6 border-b-2 border-subtle xl:px-16 xl:py-8"
     >
-      <div class="flex flex-col items-baseline gap-3 xl:flex-row xl:gap-10">
-        <div class="font-urbanist text-[20px] xl:text-[26px]">TypeMatch</div>
-        <p class="font-urbanist text-[12px] xl:text-[18px]">
+      <div class="flex flex-col items-baseline gap-2 xl:flex-row xl:gap-10">
+        <div class="font-forum text-[20px] xl:text-[32px]">TypeMatch</div>
+        <p class="font-plus-jakarta-sans text-[12px] xl:text-[14px]">
           Compare and match typefaces for web interfaces.
         </p>
       </div>
-      <button id="themeToggleBtn" class="cursor-pointer">
+      <button id="themeToggleBtn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="w-6 h-5 xl:h-6 xl:w-8"
@@ -44,10 +44,29 @@
       class="relative flex items-start justify-between w-full gap-12 px-4 py-12 xl:px-16 xl:py-24"
     >
       <!-- Preview Box -->
-      <div class="flex flex-col items-start gap-5 font-inter sm:w-1/2 xl:gap-9">
+      <div
+        class="relative flex flex-col items-start gap-5 p-6 shadow-2xl pb-9 font-plus-jakarta-sans sm:w-1/2 xl:gap-9 bg-card rounded-4xl min-h-75"
+      >
+        <div
+          id="mobileMenuBtn"
+          class="absolute cursor-pointer sm:hidden top-4 right-4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M13 16.7451C13 16.3311 12.664 15.9951 12.25 15.9951H2.75C2.336 15.9951 2 16.3311 2 16.7451C2 17.1591 2.336 17.4951 2.75 17.4951H12.25C12.664 17.4951 13 17.1591 13 16.7451ZM22 11.7451C22 11.3311 21.664 10.9951 21.25 10.9951H2.75C2.336 10.9951 2 11.3311 2 11.7451C2 12.1591 2.336 12.4951 2.75 12.4951H21.25C21.664 12.4951 22 12.1591 22 11.7451ZM18 6.74512C18 6.33112 17.664 5.99512 17.25 5.99512H2.75C2.336 5.99512 2 6.33112 2 6.74512C2 7.15912 2.336 7.49512 2.75 7.49512H17.25C17.664 7.49512 18 7.15912 18 6.74512Z"
+              class="fill-primary"
+            />
+          </svg>
+        </div>
         <div
           id="missingPreviewMessage"
-          class="hidden self-start items-center gap-2 text-[14px] md:text-[16px] text-muted"
+          class="hidden items-center place-self-center my-auto gap-2 text-[14px] md:text-[16px] text-muted"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,18 +80,18 @@
               class="fill-muted"
             />
           </svg>
-          <p>Add a preview item.</p>
+          <p class="font-plus-jakarta-sans">Add a preview item.</p>
         </div>
         <div class="flex flex-col gap-4 xl:gap-5">
           <h1
             id="headingPreview"
-            class="previewItem text-[20px] xl:text-[36px]"
+            class="previewItem text-[42px] xl:text-[56px]"
           >
             Design is in the details.
           </h1>
           <h2
             id="subHeadingPreview"
-            class="previewItem text-[14px] xl:text-[20px]"
+            class="previewItem text-[18px] xl:text-[24px]"
           >
             Choosing the right type pairing matters.
           </h2>
@@ -102,7 +121,7 @@
 
         <button
           id="AddPairingBtn"
-          class="flex px-3 py-2 rounded-sm bg-primary text-white text-[14px] cursor-pointer xl:text-[16px]"
+          class="flex px-3 py-2 rounded-sm bg-primary font-plus-jakarta-sans text-white text-[14px] xl:text-[16px]"
         >
           Add pairing
         </button>
@@ -123,23 +142,8 @@
               class="fill-muted"
             />
           </svg>
-          <p>Both pairing slots are full.</p>
+          <p class="font-plus-jakarta-sans">Both pairing slots are full.</p>
         </div>
-      </div>
-
-      <div id="mobileMenuBtn" class="cursor-pointer sm:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M13 16.7451C13 16.3311 12.664 15.9951 12.25 15.9951H2.75C2.336 15.9951 2 16.3311 2 16.7451C2 17.1591 2.336 17.4951 2.75 17.4951H12.25C12.664 17.4951 13 17.1591 13 16.7451ZM22 11.7451C22 11.3311 21.664 10.9951 21.25 10.9951H2.75C2.336 10.9951 2 11.3311 2 11.7451C2 12.1591 2.336 12.4951 2.75 12.4951H21.25C21.664 12.4951 22 12.1591 22 11.7451ZM18 6.74512C18 6.33112 17.664 5.99512 17.25 5.99512H2.75C2.336 5.99512 2 6.33112 2 6.74512C2 7.15912 2.336 7.49512 2.75 7.49512H17.25C17.664 7.49512 18 7.15912 18 6.74512Z"
-            class="fill-primary"
-          />
-        </svg>
       </div>
 
       <!-- Controls Mobile -->
@@ -148,9 +152,9 @@
         return
         false;
         id="controls-mobile"
-        class="box-border absolute top-0 left-0 z-10 items-start justify-between hidden w-full h-screen px-4 py-12 bg-white sm:static sm:flex sm:h-auto sm:w-1/2 sm:px-0 sm:py-0"
+        class="box-border absolute top-0 left-0 z-10 items-start justify-between hidden bg-[#f8e6c9] w-full h-screen px-4 py-12 sm:static sm:flex sm:h-auto sm:w-1/2 sm:px-0 sm:py-0"
       >
-        <div class="flex flex-col flex-1 min-w-0 gap-10 font-inter">
+        <div class="flex flex-col flex-1 min-w-0 gap-10 font-plus-jakarta-sans">
           <div class="flex flex-col gap-2 field">
             <div class="flex items-center w-full gap-2 pb-2 mb-8">
               <svg
@@ -170,13 +174,13 @@
               </h2>
             </div>
 
-            <div class="flex gap-2">
+            <div class="flex gap-2 font-plus-jakarta-sans">
               <label class="items-center text-[14px] xl:text-[16px]"
                 >Heading
               </label>
               <button
                 type="button"
-                class="cursor-pointer toggleButton"
+                class="toggleButton"
                 data-target="headingPreview"
               >
                 <svg
@@ -272,7 +276,7 @@
               <label class="text-[14px] xl:text-[16px]">Sub-Heading </label>
               <button
                 type="button"
-                class="cursor-pointer toggleButton"
+                class="toggleButton"
                 data-target="subHeadingPreview"
               >
                 <svg
@@ -367,7 +371,7 @@
               <label class="text-[14px] xl:text-[16px]">Body-Text </label>
               <button
                 type="button"
-                class="cursor-pointer toggleButton"
+                class="toggleButton"
                 data-target="bodyPreview"
               >
                 <svg
@@ -461,7 +465,7 @@
               <label class="text-[14px] xl:text-[16px]">Caption </label>
               <button
                 type="button"
-                class="cursor-pointer toggleButton"
+                class="toggleButton"
                 data-target="captionPreview"
               >
                 <svg
@@ -550,11 +554,7 @@
             </label>
           </div>
         </div>
-        <button
-          id="closeMenuBtn"
-          type="button"
-          class="cursor-pointer shrink-0 sm:hidden"
-        >
+        <button id="closeMenuBtn" type="button" class="shrink-0 sm:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -572,14 +572,18 @@
 
     <!-- Comparison Section -->
     <section
+      id="comparison-section"
       class="flex flex-col items-start self-stretch gap-12 px-4 py-12 xl:px-16 xl:py-24 xl:flex-row"
     >
       <!-- Pairing A [EMPTY] -->
       <div class="flex flex-col w-full gap-6 xl:w-1/2">
-        <label class="text-[12px] text-muted xl:text-[16px]">Pairing A</label>
+        <label
+          class="text-[12px] text-muted xl:text-[16px] font-plus-jakarta-sans"
+          >Pairing A</label
+        >
         <div
           id="pairingAEmpty"
-          class="h-[530px] flex w-full flex-col items-center justify-center border border-dashed border-pairing rounded-sm text-[14px] text-muted"
+          class="h-[530px] flex w-full flex-col items-center justify-center border-3 border-dashed border-pairing rounded-sm text-[14px] text-muted font-plus-jakarta-sans"
         >
           Add a Pairing to Compare
         </div>
@@ -587,13 +591,9 @@
         <!-- Pairing A [FILLED] -->
         <div
           id="pairingA"
-          class="hidden flex-col p-3 gap-5 border-2 border-pairing rounded-sm text-[16px] xl:p-8 xl:gap-9"
+          class="hidden flex-col p-6 pb-9 gap-5 bg-card rounded-4xl border-pairing shadow-2xl text-[16px] xl:p-9 xl:pb-12 xl:gap-9"
         >
-          <button
-            id="pairingAbtn"
-            class="self-end cursor-pointer"
-            type="button"
-          >
+          <button id="pairingAbtn" class="self-end" type="button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -608,10 +608,10 @@
             </svg>
           </button>
           <div class="flex flex-col gap-4 xl:gap-5">
-            <h1 id="pairingA-heading" class="text-[20px] xl:text-[36px]">
+            <h1 id="pairingA-heading" class="text-[42px] xl:text-[56px]">
               Design is in the details.
             </h1>
-            <h2 id="pairingA-subHeading" class="text-[14px] xl:text-[20px]">
+            <h2 id="pairingA-subHeading" class="text-[18px] xl:text-[24px]">
               Choosing the right type pairing matters.
             </h2>
           </div>
@@ -637,7 +637,8 @@
             >
               Caption text provides context or supporting information.
             </p>
-            <div
+
+            <!-- <div
               class="flex flex-col items-start gap-2 p-6 rounded-sm bg-surface"
             >
               <div
@@ -645,7 +646,7 @@
               >
                 Heading:
                 <span id="pairingA-heading-name" class="text-black font-label"
-                  >Inter</span
+                  >Forum</span
                 >
               </div>
               <div
@@ -655,7 +656,7 @@
                 <span
                   id="pairingA-subHeading-name"
                   class="text-black font-label"
-                  >Inter</span
+                  >Forum</span
                 >
               </div>
               <div
@@ -663,7 +664,7 @@
               >
                 Body-Text:
                 <span id="pairingA-body-name" class="text-black font-label"
-                  >Inter</span
+                  >Plus Jakarta Sans</span
                 >
               </div>
               <div
@@ -671,32 +672,31 @@
               >
                 Caption:
                 <span id="pairingA-caption-name" class="text-black font-label"
-                  >Inter</span
+                  >Plus Jakarta Sans</span
                 >
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <!-- Pairing B -->
       <div class="flex flex-col w-full gap-6 xl:w-1/2">
-        <label class="text-[12px] text-muted xl:text-[16px]">Pairing B</label>
+        <label
+          class="text-[12px] text-muted xl:text-[16px] font-plus-jakarta-sans"
+          >Pairing B</label
+        >
         <div
           id="pairingBEmpty"
-          class="flex flex-col h-[530px] w-full items-center justify-center border border-dashed border-pairing rounded-sm text-[14px] text-muted"
+          class="flex flex-col h-[530px] w-full items-center justify-center border-3 border-dashed border-pairing rounded-sm text-[14px] text-muted font-plus-jakarta-sans"
         >
           Add a Pairing to Compare
         </div>
         <!-- Pairing B [FILLED] -->
         <div
           id="pairingB"
-          class="hidden flex-col p-3 gap-5 border-2 border-pairing rounded-sm text-[16px] xl:p-8 xl:gap-9"
+          class="hidden flex-col p-6 pb-9 gap-5 bg-card rounded-4xl shadow-2xl border-pairing text-[16px] xl:p-9 xl:pb-12 xl:gap-9"
         >
-          <button
-            id="pairingBbtn"
-            class="self-end cursor-pointer"
-            type="button"
-          >
+          <button id="pairingBbtn" class="self-end" type="button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -711,10 +711,10 @@
             </svg>
           </button>
           <div class="flex flex-col gap-4 xl:gap-5">
-            <h1 id="pairingB-heading" class="text-[20px] xl:text-[36px]">
+            <h1 id="pairingB-heading" class="text-[42px] xl:text-[56px]">
               Design is in the details.
             </h1>
-            <h id="pairingB-subHeading" class="text-[14px] xl:text-[20px]">
+            <h id="pairingB-subHeading" class="text-[18px] xl:text-[24px]">
               Choosing the right type pairing matters.
             </h>
           </div>
@@ -740,6 +740,8 @@
             >
               Caption text provides context or supporting information.
             </p>
+
+            <!-- 
             <div
               class="flex flex-col items-start gap-2 p-6 rounded-sm bg-surface"
             >
@@ -748,7 +750,7 @@
               >
                 Heading:
                 <span id="pairingB-heading-name" class="text-black font-label"
-                  >Inter</span
+                  >Forum</span
                 >
               </div>
               <div
@@ -758,7 +760,7 @@
                 <span
                   id="pairingB-subHeading-name"
                   class="text-black font-label"
-                  >Inter</span
+                  >Forum</span
                 >
               </div>
               <div
@@ -766,7 +768,7 @@
               >
                 Body-Text:
                 <span id="pairingB-body-name" class="text-black font-label"
-                  >Inter</span
+                  >Plus Jakarta Sans</span
                 >
               </div>
               <div
@@ -774,20 +776,20 @@
               >
                 Caption:
                 <span id="pairingB-caption-name" class="text-black font-label"
-                  >Inter</span
+                  >Plus Jakarta Sans</span
                 >
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </section>
     <!-- Footer -->
     <footer
-      class="w-full py-4 text-center text-[8px] border-t-2 border-subtle xl:py-16 xl:text-[14px]"
+      class="w-full py-4 text-center text-[12px] border-t-2 border-subtle xl:py-16 xl:text-[14px]"
     >
-      © 2026 <span class="font-urbanist">TypeMatch.</span> Fonts provided by
-      Google Fonts.
+      © 2026 <span class="font-forum text-[14px]">TypeMatch.</span> Fonts
+      provided by Google Fonts.
     </footer>
     <script type="module" src="/src/script.js"></script>
   </body>
