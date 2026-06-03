@@ -8,7 +8,7 @@ let currentFonts = {
   heading: "Forum",
   subHeading: "Forum",
   body: "Plus Jakarta Sans",
-  caption: "Forum",
+  caption: "Plus Jakarta Sans",
 };
 
 let savedPairingFonts = new Set(); // Fonts used in saved pairings — must stay loaded
@@ -229,7 +229,7 @@ resetFontButtons.forEach((btn) => {
       headingPreview: "Forum",
       subHeadingPreview: "Forum",
       bodyPreview: "Plus Jakarta Sans",
-      captionPreview: "Forum",
+      captionPreview: "Plus Jakarta Sans",
     };
     changeFont(
       roleDefaults[previewTarget] ?? "Plus Jakarta Sans",

@@ -5,23 +5,25 @@
 ========================= */
 
 :root {
-  --color-primary: #3d405b;
-  --color-muted: #a89b85;
-  --color-surface: #faf9f0;
-  --color-disabled: #a89b85;
-  --color-border: #3d405b;
-  --color-pairing-border: #f6deb6;
-  --color-card: #f6deb6;
+  --color-primary: #151415;
+  --color-muted: #797b84;
+  --color-surface: #f1f0ea;
+  --color-disabled: #797b84;
+  --color-border: #797b84;
+  --color-border2: #151415;
+  --color-pairing-border: #151415;
+  --color-card: #f1f0ea;
 }
 
 [data-theme="dark"] {
-  --color-primary: #8b80f9;
-  --color-muted: #a0a0a0;
-  --color-surface: #333333;
-  --color-disabled: #555555;
-  --color-border: #8b80f9;
-  --color-pairing-border: #333333;
-  --color-card: #2a2b38;
+  --color-primary: #f1f0ea;
+  --color-muted: #797b84;
+  --color-surface: #f1f0ea;
+  --color-disabled: #797b84;
+  --color-border: #f1f0ea;
+  --color-border2: #292929;
+  --color-pairing-border: #797b84;
+  --color-card: #1f201e;
 }
 
 button {
@@ -34,24 +36,28 @@ button:hover {
 }
 
 body {
-  background-color: #f8e6c9;
+  background-color: #e7e5da;
 }
 
 [data-theme="dark"] body {
-  background-color: #101118;
-  color: #faf9f0;
+  background-color: #151415;
+  color: #f1f0ea;
 }
 
 [data-theme="dark"] #controls-mobile {
-  background-color: #101118;
+  background-color: #151415;
+}
+
+[data-theme="dark"] input::placeholder {
+  color: #797b84;
 }
 
 [data-theme="dark"] .text-black {
-  color: #faf9f0;
+  color: #f1f0ea;
 }
 
 [data-theme="dark"] #themeToggleBtn path {
-  fill: #faf9f0;
+  fill: #f1f0ea;
 }
 
 /* =========================
