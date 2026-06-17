@@ -12,22 +12,22 @@
       rel="stylesheet"
     />
 
-    <title>Typematch</title>
+    <title>TypeMatch</title>
   </head>
   <body>
     <section
-      class="flex justify-between px-4 py-6 border-b-2 border-subtle xl:px-16 xl:py-8"
+      class="flex justify-between px-4 py-6 border-b-2 border-subtle lg:px-16 lg:py-8"
     >
       <div class="flex flex-col items-baseline gap-2">
-        <div class="font-forum text-[20px] xl:text-[32px]">TypeMatch</div>
-        <p class="font-plus-jakarta-sans text-[12px] xl:text-[14px]">
-          Compare and match typefaces for web interfaces.
+        <div class="font-forum text-[20px] lg:text-[32px]">TypeMatch</div>
+        <p class="font-plus-jakarta-sans text-[12px] lg:text-[14px]">
+          Compare and match typefaces for UI interfaces.
         </p>
       </div>
       <button id="themeToggleBtn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-6 h-5 xl:h-6 xl:w-8"
+          class="w-6 h-5 lg:h-6 lg:w-8"
           viewBox="0 0 32 32"
           fill="none"
         >
@@ -41,11 +41,11 @@
 
     <!-- Preview Section -->
     <section
-      class="relative flex items-start justify-between w-full gap-12 px-4 py-12 xl:px-16 xl:py-24"
+      class="relative flex self-center w-full gap-12 px-4 py-12 mx-auto lg:px-16 lg:py-24"
     >
       <!-- Preview Box -->
       <div
-        class="relative mt-6 flex flex-col items-start gap-5 p-6 pb-9 font-plus-jakarta-sans sm:w-1/2 xl:gap-9 bg-card min-h-75 border-t-2 border-r-2 border-(--color-border2) shadow-[-6px_6px_0_0_var(--color-border2)]"
+        class="relative max-w-160 flex flex-col items-start justify-between p-6 pb-9 font-plus-jakarta-sans sm:w-1/2 lg:gap-9 bg-card min-h-75 border-t-2 border-r-2 border-(--color-border2) shadow-[-6px_6px_0_0_var(--color-border2)]"
       >
         <div
           id="mobileMenuBtn"
@@ -82,35 +82,36 @@
           </svg>
           <p class="font-plus-jakarta-sans">Add a preview item.</p>
         </div>
-        <div class="flex flex-col gap-4 xl:gap-5">
-          <h1
-            id="headingPreview"
-            class="previewItem text-[42px] xl:text-[56px]"
-          >
-            Design is in the details.
-          </h1>
-          <h2
-            id="subHeadingPreview"
-            class="previewItem text-[18px] xl:text-[24px]"
-          >
-            Choosing the right type pairing matters.
-          </h2>
-        </div>
-        <div class="flex flex-col gap-9">
-          <p
-            id="bodyPreview"
-            class="previewItem text-[12px] w-3/4 xl:text-[16px]"
-          >
-            Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
-            auctor blandit non neque. Feugiat ultrices ut augue egestas a
-            auctor. Amet risus egestas ac faucibus a arcu at viverra.
-          </p>
-          <p
-            id="captionPreview"
-            class="previewItem text-[12px] text-muted xl:text-[16px]"
-          >
-            Caption text provides context or supporting information.
-          </p>
+        <!-- Preview Content -->
+        <div class="flex flex-col gap-4 md:gap-5 lg:gap-6">
+          <div class="flex flex-col gap-5 lg:gap-6">
+            <h1
+              id="headingPreview"
+              class="previewItem text-[24px] md:text-[42px] lg:text-[56px]"
+            >
+              Design is in the details.
+            </h1>
+            <h2
+              id="subHeadingPreview"
+              class="previewItem text-[18px] md:text-[20px] lg:text-[24px]"
+            >
+              Choosing the right type pairing matters.
+            </h2>
+          </div>
+
+          <div class="flex flex-col gap-6 lg:gap-14">
+            <p id="bodyPreview" class="previewItem text-[14px] lg:text-[16px]">
+              Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
+              auctor blandit non neque. Feugiat ultrices ut augue egestas a
+              auctor. Amet risus egestas ac faucibus a arcu at viverra.
+            </p>
+            <p
+              id="captionPreview"
+              class="previewItem text-[12px] lg:text-[14px]"
+            >
+              Caption text provides context or supporting information.
+            </p>
+          </div>
         </div>
 
         <button id="AddPairingBtn" class="self-end" type="button">
@@ -156,7 +157,9 @@
         id="controls-mobile"
         class="box-border absolute top-0 left-0 z-10 items-start justify-between hidden bg-[#e7e5da] w-full h-screen px-4 py-12 sm:static sm:flex sm:h-auto sm:w-1/2 sm:px-0 sm:py-0"
       >
-        <div class="flex flex-col flex-1 min-w-0 gap-10 font-plus-jakarta-sans">
+        <div
+          class="flex flex-col flex-1 min-w-0 gap-10 max-w-160 font-plus-jakarta-sans"
+        >
           <div class="flex flex-col gap-2 field">
             <div class="flex items-center w-full gap-2 pb-2 mb-8">
               <svg
@@ -210,7 +213,7 @@
                   />
                 </svg>
               </button>
-              <label class="items-center text-[14px] xl:text-[16px]"
+              <label class="items-center text-[14px] lg:text-[16px]"
                 >Heading
               </label>
             </div>
@@ -304,7 +307,7 @@
                   />
                 </svg>
               </button>
-              <label class="text-[14px] xl:text-[16px]">Sub-Heading </label>
+              <label class="text-[14px] lg:text-[16px]">Sub-Heading </label>
             </div>
 
             <div
@@ -394,7 +397,7 @@
                   />
                 </svg>
               </button>
-              <label class="text-[14px] xl:text-[16px]">Body-Text </label>
+              <label class="text-[14px] lg:text-[16px]">Body-Text </label>
             </div>
 
             <div
@@ -484,7 +487,7 @@
                   />
                 </svg>
               </button>
-              <label class="text-[14px] xl:text-[16px]">Caption </label>
+              <label class="text-[14px] lg:text-[16px]">Caption </label>
             </div>
 
             <div
@@ -558,12 +561,12 @@
     <!-- Comparison Section -->
     <section
       id="comparison-section"
-      class="flex flex-col items-start self-stretch gap-12 px-4 py-12 xl:px-16 xl:py-24 xl:flex-row"
+      class="flex flex-col items-start self-stretch gap-12 px-4 py-12 mx-0 lg:px-16 lg:py-24 lg:flex-row"
     >
       <!-- Pairing A [EMPTY] -->
-      <div class="flex flex-col w-full gap-6 xl:w-1/2">
+      <div class="flex flex-col w-full gap-6 lg:max-w-160">
         <label
-          class="text-[12px] text-muted xl:text-[16px] font-plus-jakarta-sans"
+          class="text-[12px] text-muted lg:text-[16px] font-plus-jakarta-sans"
           >Pairing A</label
         >
         <div
@@ -576,7 +579,7 @@
         <!-- Pairing A [FILLED] -->
         <div
           id="pairingA"
-          class="hidden flex-col p-6 pb-9 gap-5 text-[16px] xl:p-9 xl:pb-12 xl:gap-9 bg-card border-t-2 border-r-2 border-(--color-border2) shadow-[-6px_6px_0_0_var(--color-border2)]"
+          class="hidden flex-col p-6 pb-9 text-[16px] lg:p-9 lg:pb-12 bg-card border-t-2 border-r-2 border-(--color-border2) shadow-[-6px_6px_0_0_var(--color-border2)]"
         >
           <button id="pairingAbtn" class="self-end" type="button">
             <svg
@@ -592,76 +595,40 @@
               />
             </svg>
           </button>
-          <div class="flex flex-col gap-4 xl:gap-5">
-            <h1 id="pairingA-heading" class="text-[42px] xl:text-[56px]">
-              Design is in the details.
-            </h1>
-            <h2 id="pairingA-subHeading" class="text-[18px] xl:text-[24px]">
-              Choosing the right type pairing matters.
-            </h2>
-          </div>
+          <div class="flex flex-col gap-4 md:gap-5 lg:gap-6">
+            <div class="flex flex-col gap-5 lg:gap-6">
+              <h1
+                id="pairingA-heading"
+                class="text-[24px] md:text-[42px] lg:text-[56px]"
+              >
+                Design is in the details.
+              </h1>
+              <h2
+                id="pairingA-subHeading"
+                class="text-[18px] md:text-[20px] lg:text-[24px]"
+              >
+                Choosing the right type pairing matters.
+              </h2>
+            </div>
 
-          <div class="flex flex-col gap-9">
-            <p
-              id="pairingA-body"
-              class="text-[12px] max-w-150px xl:text-[16px]"
-            >
-              Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
-              auctor blandit non neque. Feugiat ultrices ut augue egestas a
-              auctor. Amet risus egestas ac faucibus a arcu at viverra.
-            </p>
-            <p
-              id="pairingA-caption"
-              class="text-[12px] text-muted xl:text-[16px]"
-            >
-              Caption text provides context or supporting information.
-            </p>
-
-            <!-- <div
-              class="flex flex-col items-start gap-2 p-6 rounded-sm bg-surface"
-            >
-              <div
-                class="w-45 flex justify-between gap-2 text-muted text-[12px] xl:text-[16px]"
-              >
-                Heading:
-                <span id="pairingA-heading-name" class="text-black font-label"
-                  >Forum</span
-                >
-              </div>
-              <div
-                class="w-45 flex justify-between gap-2 text-muted text-[12px] xl:text-[16px]"
-              >
-                Sub-Heading:
-                <span
-                  id="pairingA-subHeading-name"
-                  class="text-black font-label"
-                  >Forum</span
-                >
-              </div>
-              <div
-                class="w-45 flex justify-between gap-2 text-muted text-[12px] xl:text-[16px]"
-              >
-                Body-Text:
-                <span id="pairingA-body-name" class="text-black font-label"
-                  >Plus Jakarta Sans</span
-                >
-              </div>
-              <div
-                class="w-45 flex justify-between gap-2 text-muted text-[12px] xl:text-[16px]"
-              >
-                Caption:
-                <span id="pairingA-caption-name" class="text-black font-label"
-                  >Plus Jakarta Sans</span
-                >
-              </div>
-            </div> -->
+            <div class="flex flex-col gap-6 lg:gap-14">
+              <p id="pairingA-body" class="text-[14px] lg:text-[16px]">
+                Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
+                auctor blandit non neque. Feugiat ultrices ut augue egestas a
+                auctor. Amet risus egestas ac faucibus a arcu at viverra.
+              </p>
+              <p id="pairingA-caption" class="text-[12px] lg:text-[14px]">
+                Caption text provides context or supporting information.
+              </p>
+            </div>
           </div>
         </div>
       </div>
+
       <!-- Pairing B -->
-      <div class="flex flex-col w-full gap-6 xl:w-1/2">
+      <div class="flex flex-col w-full gap-6 lg:max-w-160">
         <label
-          class="text-[12px] text-muted xl:text-[16px] font-plus-jakarta-sans"
+          class="text-[12px] text-muted lg:text-[16px] font-plus-jakarta-sans"
           >Pairing B</label
         >
         <div
@@ -673,7 +640,7 @@
         <!-- Pairing B [FILLED] -->
         <div
           id="pairingB"
-          class="hidden flex-col p-6 pb-9 gap-5 text-[16px] xl:p-9 xl:pb-12 xl:gap-9 bg-card border-t-2 border-r-2 border-(--color-border2) shadow-[-6px_6px_0_0_var(--color-border2)]"
+          class="hidden flex-col p-6 pb-9 text-[16px] lg:p-9 lg:pb-12 bg-card border-t-2 border-r-2 border-(--color-border2) shadow-[-6px_6px_0_0_var(--color-border2)]"
         >
           <button id="pairingBbtn" class="self-end" type="button">
             <svg
@@ -689,80 +656,43 @@
               />
             </svg>
           </button>
-          <div class="flex flex-col gap-4 xl:gap-5">
-            <h1 id="pairingB-heading" class="text-[42px] xl:text-[56px]">
-              Design is in the details.
-            </h1>
-            <h id="pairingB-subHeading" class="text-[18px] xl:text-[24px]">
-              Choosing the right type pairing matters.
-            </h>
-          </div>
+          <div class="flex flex-col gap-4 md:gap-5 lg:gap-6">
+            <div class="flex flex-col gap-5 lg:gap-6">
+              <h1
+                id="pairingB-heading"
+                class="text-[24px] md:text-[42px] lg:text-[56px]"
+              >
+                Design is in the details.
+              </h1>
+              <h2
+                id="pairingB-subHeading"
+                class="text-[18px] md:text-[20px] lg:text-[24px]"
+              >
+                Choosing the right type pairing matters.
+              </h2>
+            </div>
 
-          <div class="flex flex-col gap-9">
-            <p
-              id="pairingB-body"
-              class="text-[12px] max-w-150px xl:text-[16px]"
-            >
-              Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
-              auctor blandit non neque. Feugiat ultrices ut augue egestas a
-              auctor. Amet risus egestas ac faucibus a arcu at viverra.
-            </p>
-            <p
-              id="pairingB-caption"
-              class="text-[12px] text-muted xl:text-[16px]"
-            >
-              Caption text provides context or supporting information.
-            </p>
-
-            <!-- 
-            <div
-              class="flex flex-col items-start gap-2 p-6 rounded-sm bg-surface"
-            >
-              <div
-                class="w-45 flex justify-between gap-2 text-muted text-[12px] xl:text-[16px]"
-              >
-                Heading:
-                <span id="pairingB-heading-name" class="text-black font-label"
-                  >Forum</span
-                >
-              </div>
-              <div
-                class="w-45 flex justify-between gap-2 text-muted text-[12px] xl:text-[16px]"
-              >
-                Sub-Heading:
-                <span
-                  id="pairingB-subHeading-name"
-                  class="text-black font-label"
-                  >Forum</span
-                >
-              </div>
-              <div
-                class="w-45 flex justify-between gap-2 text-muted text-[12px] xl:text-[16px]"
-              >
-                Body-Text:
-                <span id="pairingB-body-name" class="text-black font-label"
-                  >Plus Jakarta Sans</span
-                >
-              </div>
-              <div
-                class="w-45 flex justify-between gap-2 text-muted text-[12px] xl:text-[16px]"
-              >
-                Caption:
-                <span id="pairingB-caption-name" class="text-black font-label"
-                  >Plus Jakarta Sans</span
-                >
-              </div>
-            </div> -->
+            <div class="flex flex-col gap-6 lg:gap-14">
+              <p id="pairingB-body" class="text-[14px] lg:text-[16px]">
+                Lorem ipsum dolor sit amet consectetur. Eget nulla egestas dolor
+                auctor blandit non neque. Feugiat ultrices ut augue egestas a
+                auctor. Amet risus egestas ac faucibus a arcu at viverra.
+              </p>
+              <p id="pairingB-caption" class="text-[12px] lg:text-[14px]">
+                Caption text provides context or supporting information.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- Footer -->
     <footer
-      class="w-full py-4 text-center text-[12px] border-t-2 border-subtle xl:py-16 xl:text-[14px]"
+      class="w-full py-4 text-center text-[12px] border-t-2 border-subtle lg:py-16 lg:text-[14px]"
     >
-      © 2026 <span class="font-forum text-[14px]">TypeMatch.</span> Fonts
-      provided by Google Fonts.
+      © 2026
+      <span class="font-forum text-[14px] lg:text-[16px]">TypeMatch.</span>
+      Fonts provided by Google Fonts.
     </footer>
     <script type="module" src="/src/script.js"></script>
   </body>

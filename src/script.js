@@ -168,13 +168,13 @@ inputs.forEach((input) => {
     const query = e.target.value.toLowerCase();
     const datalist = document.getElementById("font-names");
 
-    if (query.length < 2) {
+    if (query.length < 1) {
       datalist.innerHTML = "";
       return;
     }
 
     const matches = allFonts
-      .filter((fontName) => fontName.toLowerCase().includes(query))
+      .filter((fontName) => fontName.toLowerCase().startsWith(query))
       .slice(0, 15);
 
     datalist.innerHTML = matches
@@ -426,16 +426,12 @@ function slotsFullMessage() {
 
   // We only show the message if BOTH are full
   if (isA_Full && isB_Full) {
-    // SHOW MESSAGE
-    fullMessage.classList.replace("hidden", "flex"); // Show the wrapper/icon
-
-    // HIDE BUTTON
-    addPairingButton.classList.replace("flex", "hidden");
+    fullMessage.classList.remove("hidden");
+    fullMessage.classList.add("flex");
+    addPairingButton.classList.add("hidden");
   } else {
-    // HIDE MESSAGE
-    fullMessage.classList.replace("flex", "hidden");
-
-    // Show the button if either slot is empty
-    addPairingButton.classList.replace("hidden", "flex");
+    fullMessage.classList.add("hidden");
+    fullMessage.classList.remove("flex");
+    addPairingButton.classList.remove("hidden");
   }
 }
